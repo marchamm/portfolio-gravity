@@ -1,0 +1,108 @@
+p {
+  margin: 1em 0;
+  line-height: 1.5em;
+}
+
+.heading {
+  margin-top: 3em;
+  margin-bottom: 1em;
+
+
+}
+
+strong {
+  font-weight: bold;
+}
+
+.muted {
+  color: $neutral500;
+}
+
+.displayOne,
+.displayTwo,
+.displayThree,
+.displayFour {
+  font-weight: bold;
+}
+
+.displayBodySmall {
+}
+
+.letterContainer {
+}
+
+@media screen and (min-width: 320px) {
+
+  body,
+  .displayBody {
+    font-size: calc(18px + (24 - 18) * ((100vw - 300px) / (1600 - 300)));
+  }
+
+  .displayBodySmall {
+    font-size: calc(16px + (20 - 16) * ((100vw - 300px) / (1600 - 300)));
+  }
+
+  .displayBodyXSmall {
+    font-size: calc(12px + (14 - 12) * ((100vw - 300px) / (1600 - 300)));
+  }
+
+  .displayOne {
+    font-size: calc(32px + (48 - 32) * ((100vw - 300px) / (1600 - 300)));
+  }
+
+  .displayTwo {
+    font-size: calc(28px + (40 - 28) * ((100vw - 300px) / (1600 - 300)));
+  }
+
+  .displayThree {
+    font-size: calc(24px + (36 - 24) * ((100vw - 300px) / (1600 - 300)));
+  }
+
+  .displayFour {
+    font-size: calc(20px + (28 - 20) * ((100vw - 300px) / (1600 - 300)));
+  }
+
+  .displayFive {
+    font-size: calc(20px + (28 - 20) * ((100vw - 300px) / (1600 - 300)));
+  }
+
+  .letterContainer {
+    font-size: calc(160px + (540 - 160) * ((100vw - 320px) / (1600 - 320)));
+  }
+}
+
+@media screen and (min-width: 1600px) {
+
+  body,
+  .displayBody {
+    font-size: 24px;
+  }
+
+  .displayOne {
+    font-size: 48px;
+  }
+
+  .displayTwo {
+    font-size: 40px;
+  }
+
+  .displayThree {
+    font-size: 36px;
+  }
+
+  .displayFour {
+    font-size: 28px;
+  }
+
+  .displayBodySmall {
+    font-size: 20px;
+  }
+
+  .displayBodyXSmall {
+    font-size: 14px;
+  }
+
+  .letterContainer {
+    font-size: 540px;
+  }
+}

@@ -1,0 +1,16 @@
+@import '../../../styles/foundations.module.scss';
+
+.hero {
+  padding: 20vw 10vw;
+  text-align: center;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.back {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 24px 16px;
+}

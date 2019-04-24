@@ -4,6 +4,8 @@ import cnames from 'classnames';
 import Parallax from 'parallax-js';
 import posed from 'react-pose';
 import styles from './Home.module.scss';
+import background from '../../styles/background.module.scss';
+import '../../styles/utils.module.scss';
 
 const parallaxOptions = {
   limitY: 20,
@@ -111,7 +113,7 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <div className={styles.wrapper}>
+        <div className={cnames(background.wrapper, styles.wrapper)}>
           <div className={styles.heroContainer}>
             <Beacon toggleVisible={this.toggleVisible} />
             <Message toggleVisible={this.toggleVisible} pose={this.state.isVisible}/>
@@ -183,22 +185,22 @@ class Home extends Component {
           <div className={styles.main}>
             <div className={styles.section}>
               <div className={cnames(styles.content, styles.plain)}>
-                <div className={styles.body}>
-                  <h2 className={styles.sectionHeading}>Hello!</h2>
-                  <p className={styles.lead}><strong>I'm Marcus, a Senior Design Technologist working with the talented people at Redbubble.</strong></p><p>I get excited about design systems, prototyping and solving the right problems. You're most likely to find me somewhere around Melbourne surfing, climbing or drinking coffee.</p>
+                <div className={cnames(styles.body, styles.spLarge)}>
+                  <h2 className={styles.displayOne}>Hello!</h2>
+                  <p className={styles.displayFour}><strong>I'm Marcus, a Senior Design Technologist working with the talented people at Redbubble.</strong></p><p>I get excited about design systems, prototyping and solving the right problems. You're most likely to find me somewhere around Melbourne surfing, climbing or drinking coffee.</p>
                 </div>
               </div>
             </div>
             <div className={styles.section}>
               <div className={styles.sectionHeader}>
-                <h2 className={styles.sectionHeading}>Spotlight</h2>
+                <h2 className={styles.displayOne}>Spotlight</h2>
               </div>
               <Link to="/spotlight/design-system" className={cnames(styles.content, styles.interactive, styles.designSystem)}>
                 <div className={styles.body}>
-                  <div className={styles.label}>Product</div>
-                  <p className={styles.lead}><strong>Building &amp; establishing a Design System</strong></p>
+                  <div className={cnames(styles.label, styles.displayBodyXSmall)}>Product</div>
+                  <p className={cnames(styles.lead, styles.displayFour)}><strong>Building &amp; establishing a Design System</strong></p>
                   <p>Helping teams be efficient, fast and deliver high quality experiences.</p>
-                  <div className={styles.cta}>Design System
+                  <div className={cnames(styles.cta, styles.displayFour)}>Design System
                     <span className={styles.arrow}>
                       <svg xmlns="http://www.w3.org/2000/svg" width="36" height="26" viewBox="0 0 36 26">
                         <g fill="#1F3033" fillRule="evenodd">
@@ -214,10 +216,10 @@ class Home extends Component {
               </Link>
               <Link to="/spotlight/product-page" className={cnames(styles.content, styles.interactive, styles.productPage)}>
                 <div className={styles.body}>
-                  <div className={styles.label}>Product Design</div>
-                  <p className={styles.lead}><strong>Design &amp; build out new product page</strong></p>
+                  <div className={cnames(styles.label, styles.displayBodyXSmall)}>Product Design</div>
+                  <p className={cnames(styles.lead, styles.displayFour)}><strong>Design &amp; build out new product page</strong></p>
                   <p>Identifying key user pain points and iterating towards a fast and improved user experience.</p>
-                  <div className={styles.cta}>Product Page
+                  <div className={cnames(cnames(styles.cta, styles.displayFour), styles.displayFour)}>Product Page
                     <span className={styles.arrow}>
                       <svg xmlns="http://www.w3.org/2000/svg" width="36" height="26" viewBox="0 0 36 26">
                         <g fill="#1F3033" fillRule="evenodd">
@@ -233,10 +235,10 @@ class Home extends Component {
               </Link>
               <Link to="/spotlight/prototype" className={cnames(styles.content, styles.interactive, styles.productConfig)}>
                 <div className={styles.body}>
-                  <div className={styles.label}>Prototyping</div>
-                  <p className={styles.lead}><strong>Using prototyping as a tool for solving complex UI problems.</strong></p>
+                  <div className={cnames(styles.label, styles.displayBodyXSmall)}>Prototyping</div>
+                  <p className={cnames(styles.lead, styles.displayFour)}><strong>Using prototyping as a tool for solving complex UI problems.</strong></p>
                   <p>Tackling product configuration in a unique environment.</p>
-                  <div to="/spotlight" className={styles.cta}>Prototyping
+                  <div to="/spotlight" className={cnames(styles.cta, styles.displayFour)}>Prototyping
                     <span className={styles.arrow}>
                       <svg xmlns="http://www.w3.org/2000/svg" width="36" height="26" viewBox="0 0 36 26">
                         <g fill="#1F3033" fillRule="evenodd">
@@ -252,10 +254,10 @@ class Home extends Component {
               </Link>
               <Link to="/spotlight/maxwell-williams" className={cnames(styles.content, styles.interactive, styles.ecommerce)}>
                 <div className={styles.body}>
-                  <div className={styles.label}>E-Commerce</div>
-                  <p className={styles.lead}><strong>Designing and building enterprise B2B / B2C solutions.</strong></p>
+                  <div className={cnames(styles.label, styles.displayBodyXSmall)}>E-Commerce</div>
+                  <p className={cnames(styles.lead, styles.displayFour)}><strong>Designing and building enterprise B2B / B2C solutions.</strong></p>
                   <p>Templating and building frameworks and custom integrations.</p>
-                  <div className={styles.cta}>E-Commerce
+                  <div className={cnames(styles.cta, styles.displayFour)}>E-Commerce
                     <span className={styles.arrow}>
                       <svg xmlns="http://www.w3.org/2000/svg" width="36" height="26" viewBox="0 0 36 26">
                         <g fill="#1F3033" fillRule="evenodd">
@@ -273,7 +275,7 @@ class Home extends Component {
             <div className={cnames(styles.section, styles.vibrant)}>
               <div className={styles.content}>
                 <div className={styles.body}>
-                  <div className={styles.label}>Social</div>
+                  <div className={cnames(styles.label, styles.displayBodyXSmall)}>Social</div>
                   <ul>
                     <li><a href="https://codepen.io/marchamm/" target="_blank">Codepen</a></li>
                     <li><a href="https://github.com/marchamm/" target="_blank">GitHub</a></li>
@@ -285,7 +287,7 @@ class Home extends Component {
 
               <div className={styles.content}>
                 <div className={styles.body}>
-                  <div className={styles.label}>Kudos</div>
+                  <div className={cnames(styles.label, styles.displayBodyXSmall)}>Kudos</div>
                   <ul>
                     <li><strong><a href="http://matthew.wagerfield.com/parallax/" target="_blank">Parallax</a></strong> for the gyro plugin used at the top.</li>
                     <li><strong><a href="https://github.com/marchamm/burst-animation" target="_blank">Burst</a></strong> for funky burst animations when clicking the waving emoji at the top.</li>
@@ -293,12 +295,11 @@ class Home extends Component {
                 </div>
               </div> <div className={styles.content}>
                 <div className={styles.body}>
-                  <div className={styles.label}>Fun facts</div>
+                  <div className={cnames(styles.label, styles.displayBodyXSmall)}>About</div>
                   <ul>
-                    <li>I'm a Swede living in Australia.</li>
+                    <li>A Swede living permanently in Australia.</li>
                     <li>On weekends you're likely to find me on a mountain or in the ocean.</li>
-                    <li>I've been a designer since I was 13...</li>
-                    <li>...and I've been building websites since I was 15.</li>
+                    <li>Been designing and developing since the age of 13.</li>
                   </ul>
                 </div>
               </div>

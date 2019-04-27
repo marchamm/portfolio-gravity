@@ -4,6 +4,7 @@ import cnames from 'classnames';
 import styles from './ProductPage.module.scss';
 import List, { ListItem } from '../../../components/List';
 import PageContainer from '../../../components/PageContainer';
+import Footer from '../../../components/Footer';
 import SpotlightHero from '../../../components/SpotlightHero';
 import hero from './images/pagehero.svg';
 import splash from './images/productdisplayclean.jpg';
@@ -185,7 +186,6 @@ class ProductPage extends Component {
               </div>
             </Element>
             <Element name="outcome" className={styles.step}>
-
               <Indicator to="outcome" />
               <div className={cnames(styles.spMedium, styles.spHorisontal, styles.stepContent)}>
                 <PageContainer size="SMALL" left>
@@ -198,6 +198,7 @@ class ProductPage extends Component {
             </Element>
           </div>
         </PageContainer>
+        <Footer />
       </div>
     )
   }

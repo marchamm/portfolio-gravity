@@ -1,0 +1,59 @@
+@import '../../styles/foundations.module.scss';
+
+.label {
+  text-transform: uppercase;
+  background: $neutral100;
+  line-height: 1;
+  padding: 0 12px;
+  height: 32px;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  letter-spacing: 0.03em;
+  font-weight: bold;
+  margin-top: 48px;
+  &:first-of-type {
+    margin-top: 0;
+  }
+}
+
+.footerSection {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  color: #FFF;
+  margin-top: 60px;
+
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    background: $primary;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 60px;
+    transform: rotate(2deg) scale(1.2);
+    box-shadow: 0 1vw 48px inset rgba(0,0,0,0.1);
+  }
+  a {
+    color: #FFF;
+    font-weight: bold;
+    text-decoration: underline;
+    &:hover {
+      border-bottom: 1px solid #f819be;
+    }
+  }
+  .label {
+    background: rgba(#FFF,0.1);
+    color: #FFF;
+    &:after {
+      background: rgba(#FFF, 0.5);
+    }
+  }
+}
+@media screen and (min-width: 480px) {
+  .section {
+    margin-top: 96px;
+  }
+}

@@ -4,7 +4,7 @@ import styles from './PageContainer.module.scss';
 
 const PageContainer = (props) => {
 
-  const { children, size, left, right, padding } = props
+  const { children, size, left, right, padding, style } = props
 
   const classnames = cnames(styles.container, {
     [styles.large]: size === 'LARGE',
@@ -16,7 +16,7 @@ const PageContainer = (props) => {
   })
 
   return (
-    <div className={classnames}>
+    <div className={classnames} style={style}>
       { children }
     </div>
   )

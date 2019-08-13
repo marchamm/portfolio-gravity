@@ -14,10 +14,10 @@
   border-radius: 16px;
   margin: 16px;
   min-width: 280px;
-  transition: transform 300ms linear, box-shadow 300ms linear;
+  transition: transform 400ms linear, box-shadow 400ms linear;
   box-shadow:
-    0 4px 12px -8px rgba(#000, 0.6),
-    0 -4px 48px -4px rgba(#000, 0.1)
+    0 4px 12px -8px rgba(#000, 0.1),
+    0 -4px 24px -4px rgba(#000, 0.1)
   ;
   overflow: hidden;
 
@@ -50,23 +50,14 @@
 }
 .content.interactive:hover {
   transform: translateY(-4px);
-  transition: all 200ms linear;
+  transition: all 100ms linear;
   box-shadow:
-    0 8px 48px -12px rgba(#000, 0.2),
-    0 -4px 48px -4px rgba(#000, 0.05)
+    0 6px 18px -10px rgba(#000, 0.4),
+    0 -8px 32px -8px rgba(#000, 0.05)
   ;
-
-  &:active {
-    transition: all 40ms linear;
-    transform: translateY(0);
-    box-shadow:
-      0 4px 12px -8px rgba(#000, 0.6),
-      0 -4px 48px -4px rgba(#000, 0.05)
-    ;
-  }
   .cta {
     .arrow {
-      transform: translate3d(4px, 0, 0);
+      transform: translate3d(8px, 0, 0);
     }
   }
 }
@@ -99,7 +90,7 @@
   text-decoration: none;
 
   .arrow {
-    margin-left: 8px;
+    margin-left: 16px;
     color: $tertiary;
   }
 }

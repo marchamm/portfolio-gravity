@@ -1,10 +1,16 @@
-.container {
+.outer {
   margin: 0 auto;
   width: 100%;
+  display: flex;
+  align-items: center;
+
+  .inner {
+    width: 100%;
+  }
 
   &.padding {
-    padding-left: 24px;
-    padding-right: 24px;
+    padding-left: 16px;
+    padding-right: 16px;
   }
 
   &.left {
@@ -25,5 +31,9 @@
 
   &.xlarge {
     max-width: 1600px;
+  }
+
+  &.display {
+    min-height: 600px;
   }
 }

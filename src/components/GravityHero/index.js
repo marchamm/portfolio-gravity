@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Parallax from 'parallax-js';
+import cnames from 'classnames';
 import posed from 'react-pose';
+import Burst from '../Burst'
 import styles from './GravityHero.module.scss';
 import '../../styles/utils.module.scss';
 
@@ -15,9 +17,21 @@ const AnimateMessage = posed.div({
   },
   hidden: {
     opacity: 0,
-    y: 8,
-    x: 8,
-    rotate: -8,
+    y: 4,
+    x: 0,
+    rotate: -4,
+    originX: '100%',
+    originY: '0%',
+    transition: {
+      duration: 100,
+      ease: 'easeInOut',
+    }
+  },
+  initial: {
+    opacity: 0,
+    y: 2,
+    x: 0,
+    rotate: -4,
     originX: '100%',
     originY: '0%',
     transition: {
@@ -35,8 +49,12 @@ const parallaxOptions = {
 }
 
 const Beacon = (props) => {
+  const classnames = cnames(styles.beacon, {
+    [styles.pulse]: props.isVisible === 'initial',
+  })
+
   return(
-    <div role="button" className={styles.beacon} onClick={props.toggleVisible}>
+    <div role="button" className={classnames}>
       <div className={styles.core} />
     </div>
   )
@@ -63,13 +81,14 @@ const Message = (props) => {
 
 const Letter = posed.div({
   closed: {
-    x: -150,
+    x: -36,
+    opacity: 0
   },
   open: {
     x: 0,
-    delay: 600,
+    opacity: 1,
     transition: {
-      type: 'spring',
+      delay: 200,
       duration: 600,
     }
   }
@@ -79,7 +98,7 @@ class GravityHero extends Component {
   constructor () {
     super()
     this.state = {
-      isVisible: 'hidden'
+      isVisible: 'initial'
     }
 
     this.toggleVisible = this.toggleVisible.bind(this);
@@ -87,7 +106,7 @@ class GravityHero extends Component {
 
   toggleVisible () {
     this.setState({
-      isVisible: this.state.isVisible === 'hidden' ? 'visible' : 'hidden',
+      isVisible: this.state.isVisible === 'visible' ? 'hidden' : 'visible',
     })
   }
 
@@ -107,8 +126,20 @@ class GravityHero extends Component {
   render() {
     return (
       <div className={styles.heroContainer}>
-        <Beacon toggleVisible={this.toggleVisible} />
+        <Beacon isVisible={this.state.isVisible} toggleVisible={this.toggleVisible} />
         <Message toggleVisible={this.toggleVisible} pose={this.state.isVisible}/>
+        <Burst
+          trigger={({ onClick }) => (
+            // <button onClick={onClick}>Trigger</button>
+
+            <div onClick={onClick} role="button" className={styles.beacon}>
+              <div className={styles.core} />
+            </div>
+          )}
+          clones={6}
+        >
+          ❤️
+        </Burst>
         <div className={styles.hero}>
           <div className={styles.letterContainer}>
             <div ref={el => this.m = el}>

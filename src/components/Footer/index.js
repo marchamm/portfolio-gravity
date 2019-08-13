@@ -14,15 +14,15 @@ class Footer extends Component {
         <PageContainer style={{ position: 'relative' }}>
           <Label title="Social" inverted />
           <ul>
-            <li><a href="https://codepen.io/marchamm/" target="_blank">Codepen</a></li>
-            <li><a href="https://github.com/marchamm/" target="_blank">GitHub</a></li>
-            <li><a href="https://dribbble.com/marcushammarstedt" target="_blank">Dribble</a></li>
-            <li><a href="https://www.linkedin.com/in/marcushammarstedt" target="_blank">LinkedIn</a></li>
+            <li><a href="https://codepen.io/marchamm/" target="_blank" rel="noopener noreferrer">Codepen</a></li>
+            <li><a href="https://github.com/marchamm/" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+            <li><a href="https://dribbble.com/marcushammarstedt" target="_blank" rel="noopener noreferrer">Dribble</a></li>
+            <li><a href="https://www.linkedin.com/in/marcushammarstedt" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
           </ul>
           <Label title="Kudos" inverted />
           <ul>
-            <li><strong><a href="http://matthew.wagerfield.com/parallax/" target="_blank">Parallax</a></strong> for the gyro plugin used at the top.</li>
-            <li><strong><a href="https://github.com/marchamm/burst-animation" target="_blank">Burst</a></strong> for funky burst animations when clicking the waving emoji at the top.</li>
+            <li><strong><a href="http://matthew.wagerfield.com/parallax/" target="_blank" rel="noopener noreferrer">Parallax</a></strong> for the gyro plugin used at the top.</li>
+            <li><strong><a href="https://github.com/marchamm/burst-animation" target="_blank" rel="noopener noreferrer">Burst</a></strong> for funky burst animations when clicking the waving emoji at the top.</li>
           </ul>
           <Label title="About" inverted />
           <ul>

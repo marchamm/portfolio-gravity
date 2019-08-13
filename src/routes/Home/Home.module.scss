@@ -4,7 +4,41 @@
   width: 100%;
   position: relative;
   z-index: 9;
-  margin-top: -20vh;
+  background-image:  url('../../images/light.svg');
+  background-position: top left -700px;
+  background-size: 1200px;
+  background-repeat: no-repeat;
+  margin-top: -40vh;
+}
+
+@keyframes bounce {
+  0%   { transform: translateY(0); }
+  40% { transform: translateY(-50%); }
+  80% { transform: translateY(0%); }
+  100% { transform: translateY(0%); }
+}
+
+.arrowBounce {
+  display: flex;
+  align-items: center;
+  width: 32px;
+  height: 24px;
+  position: absolute;
+  left: 4%;
+  top: 0;
+  color: $primary;
+  cursor: pointer;
+
+  svg {
+    width: 100%;
+    transform: rotate(90deg);
+  }
+
+  &.left {
+    transform: scale(-1);
+  }
+
+  animation: bounce 1000ms infinite ease-in-out; /* IE 10+, Fx 29+ */
 }
 
 .emoji {
@@ -67,6 +101,9 @@
 @media screen and (min-width: 480px) {
   .sectionHeader {
     padding: 0 64px;
+  }
+  .arrowBounce {
+    top: -2%;
   }
 }
 .section {

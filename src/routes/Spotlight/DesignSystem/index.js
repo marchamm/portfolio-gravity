@@ -1,38 +1,79 @@
 import React, { Component } from 'react';
+import { Link, Element } from 'react-scroll';
 import cnames from 'classnames';
 import styles from './DesignSystem.module.scss';
+import PageContainer from '../../../components/PageContainer';
+import SpotlightHero from '../../../components/SpotlightHero';
+import hero from './images/pagehero.svg';
 
-class DesignSystem extends Component {
-  constructor(props) {
-   super(props);
-   this.goBack = this.goBack.bind(this); // i think you are missing this
+class Indicator extends Component {
+  handleSetActive(to) {
+    let e = document.getElementsByName(to);
+    e[0].classList.add(styles.active);
   }
 
-  goBack() {
-      this.props.history.goBack();
-  }
-  render () {
+  render() {
+    const offset = -(window.innerHeight * 0.75);
+
     return (
-      <div className={styles.wrapper}>
-        <div className={styles.hero}>
-          <div className={styles.back} onClick={this.goBack}>
-            <span className={cnames(styles.arrow, styles.left)}>
-              <svg xmlns="http://www.w3.org/2000/svg" width="36" height="26" viewBox="0 0 36 26">
-                <g fill="#1F3033" fillRule="evenodd">
-                  <rect width="32" height="4" y="11"/>
-                  <rect width="18" height="4" x="19.071" y="6.071" transform="rotate(45 28.071 8.071)"/>
-                  <rect width="18" height="4" x="19.071" y="16.071" transform="rotate(-45 28.071 18.071)"/>
-                </g>
-              </svg>
-            </span>
+      <Link
+        className={styles.stepIndicator}
+        spy
+        to={this.props.to}
+        smooth
+        offset={offset}
+        activeClass={styles.active}
+        onSetActive={this.handleSetActive}
+      >
+        <span />
+      </Link>
+    )
+
+  }
+}
+
+class ProductPage extends Component {
+
+  componentDidMount() {
+    setTimeout(() => { window.scrollTo(0, 0) }, 400);
+  }
+
+  render () {
+
+    const scrollOffset = -40;
+
+    return (
+      <React.Fragment>
+        <SpotlightHero
+          title="Design System"
+          caption="Harmony and efficiency in a product driven company."
+          disclaimer="Some values have been obscured for confidentiality purposes"
+          background={hero}
+        />
+        <PageContainer size="LARGE">
+          <div className={cnames(styles.process, styles.spMedium)}>
+            <Element name="intro" className={styles.step}>
+              <Indicator to="intro" />
+              <div className={cnames(styles.spMedium, styles.spHorisontal, styles.stepContent)}>
+                <Link className={styles.scrollLink} to="overview" smooth offset={scrollOffset}>Overview</Link>
+              </div>
+            </Element>
+            <Element name="overview" className={styles.step}>
+              <Indicator to="overview" onSetActive={this.handleSetActive}/>
+              <div className={cnames(styles.spMedium, styles.spHorisontal, styles.stepContent)}>
+                <PageContainer size="SMALL" left>
+                  <div className={styles.displayTwo}>Overview</div>
+                  <p>This work was part of an initiative at Redbubble that focused on performance and a technical shift towards a new react based framework. We designed, built and delivered incrementally as we started from scratch.</p>
+                  <p>My role was to do research, discovery,  prototyping and test our assumptions.</p>
+                  <p>We were a team of 5. Product Manager, Engineers and myself.</p>
+                </PageContainer>
+              </div>
+            </Element>
           </div>
-          <div className={styles.displayOne}>Design System</div>
-          <div className={styles.divider} />
-          <p className={styles.displayBody}>Bringing harmony and efficiency to designers and developers.</p>
-        </div>
-      </div>
+        </PageContainer>
+      </React.Fragment>
     )
   }
 };
 
-export default DesignSystem
+export default ProductPage

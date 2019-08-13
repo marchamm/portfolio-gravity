@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "classnames": "^2.2.6",
+    "cli-confirm": "^1.0.1",
     "node-sass": "^4.11.0",
     "parallax-js": "^3.1.0",
     "react": "^16.7.0",
@@ -20,7 +21,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "aws s3 sync build/ s3://mhammarstedt.com",
+    "deploy-production": "cli-confirm \"Do you really want to deploy to PRODUCTION?\" && aws s3 sync build/ s3://staging.mhammarstedt.com",
     "deploy-staging": "aws s3 sync build/ s3://staging.mhammarstedt.com"
   },
   "eslintConfig": {

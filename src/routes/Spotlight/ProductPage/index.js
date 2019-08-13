@@ -4,12 +4,9 @@ import cnames from 'classnames';
 import styles from './ProductPage.module.scss';
 import List, { ListItem } from '../../../components/List';
 import PageContainer from '../../../components/PageContainer';
-import Footer from '../../../components/Footer';
 import SpotlightHero from '../../../components/SpotlightHero';
 import hero from './images/pagehero.svg';
 import splash from './images/productdisplayclean.jpg';
-import stickySplash from './images/productpagesplash.jpg';
-import strategyIllo from './images/aliceillo.jpg';
 import breakdown from './images/breakdown.jpg';
 import fakeGoogle from './images/fakegoogle.gif';
 import productpage from './images/productpage.mp4';
@@ -20,11 +17,6 @@ class Indicator extends Component {
     let e = document.getElementsByName(to);
     e[0].classList.add(styles.active);
   }
-
-  // handleSetInactive(to) {
-  //   let e = document.getElementsByName(to);
-  //   e[0].classList.remove(styles.active);
-  // }
 
   render() {
     const offset = -(window.innerHeight * 0.75);
@@ -38,7 +30,6 @@ class Indicator extends Component {
         offset={offset}
         activeClass={styles.active}
         onSetActive={this.handleSetActive}
-        // onSetInactive={this.handleSetInactive}
       >
         <span />
       </Link>
@@ -58,7 +49,7 @@ class ProductPage extends Component {
     const scrollOffset = -40;
 
     return (
-      <div className={cnames(styles.wrapper)}>
+      <React.Fragment>
         <SpotlightHero
           title="Product Page"
           caption="Conversion and engagement impact by focusing on performance and user experience."
@@ -70,13 +61,11 @@ class ProductPage extends Component {
             <Element name="intro" className={styles.step}>
               <Indicator to="intro" />
               <div className={cnames(styles.spMedium, styles.spHorisontal, styles.stepContent)}>
-                <PageContainer size="SMALL" left>
-                  <Link className={styles.scrollLink} to="overview" smooth offset={scrollOffset}>Overview</Link>
-                  <Link className={styles.scrollLink} to="strategy" smooth offset={scrollOffset}>Strategy</Link>
-                  <Link className={styles.scrollLink} to="research" smooth offset={scrollOffset}>Research</Link>
-                  <Link className={styles.scrollLink} to="design" smooth offset={scrollOffset}>Design</Link>
-                  <Link className={styles.scrollLink} to="outcome" smooth offset={scrollOffset}>Outcome</Link>
-                </PageContainer>
+                <Link className={styles.scrollLink} to="overview" smooth offset={scrollOffset}>Overview</Link>
+                <Link className={styles.scrollLink} to="strategy" smooth offset={scrollOffset}>Strategy</Link>
+                <Link className={styles.scrollLink} to="research" smooth offset={scrollOffset}>Research</Link>
+                <Link className={styles.scrollLink} to="design" smooth offset={scrollOffset}>Design</Link>
+                <Link className={styles.scrollLink} to="outcome" smooth offset={scrollOffset}>Outcome</Link>
               </div>
             </Element>
             <Element name="overview" className={styles.step}>
@@ -102,7 +91,7 @@ class ProductPage extends Component {
               </div>
             </Element>
             <div className={styles.stickySplash}>
-              <img src={breakdown} />
+              <img src={breakdown} alt="breakdown"/>
             </div>
             <Element name="research" className={styles.step}>
               <Indicator to="research" />
@@ -140,7 +129,7 @@ class ProductPage extends Component {
                     <p>We built our own Google Search landing page within our platform. It had a search form that would trigger a real product search within Google Shopping. The query would have applied filters, ensuring that each result would come from our site.</p>
                   </PageContainer>
                   <div className={cnames(styles.spLarge, styles.spHorisontal, styles.splash, styles.splashBg)}>
-                    <img src={fakeGoogle} />
+                    <img src={fakeGoogle} alt="google test demonstration"/>
                   </div>
                 </div>
               </div>
@@ -181,7 +170,7 @@ class ProductPage extends Component {
                   </PageContainer>
                 </div>
                 <div className={styles.splash}>
-                  <img src={splash} />
+                  <img src={splash} alt="designs"/>
                 </div>
               </div>
             </Element>
@@ -198,8 +187,7 @@ class ProductPage extends Component {
             </Element>
           </div>
         </PageContainer>
-        <Footer />
-      </div>
+      </React.Fragment>
     )
   }
 };

@@ -30,9 +30,8 @@ class App extends Component {
               >
                 <Switch location={location}>
                   <Route exact path="/" component={Home} key="Home" />
-                  <Route exact path="/spotlight" component={Spotlight} key="Spotlight" />
-                  <Route exact path="/spotlight/design-system" component={DesignSystem} key="DS" />
-                  <Route exact path="/spotlight/product-page" component={ProductPage} key="DS" />
+                  <Route path="/spotlight" component={Spotlight} key="Spotlight" />
+
                   <Route exact path="/about" component={About} key="About" />
                 </Switch>
               </RouteContainer>

@@ -6,24 +6,12 @@
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: top;
+  padding-top: 25%;
+  padding-bottom: 5%;
 }
 
-.back {
-  position: fixed;
-  top: 2vw;
-  left: 2vw;
-  padding: 0;
-  cursor: pointer;
-  width: 56px;
-  height: 56px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 500px;
-  color: $tertiary;
-  z-index: 99;
-  background: #FFF;
-  appearance: none;
-  border: none;
-  box-shadow: 0 4px 8px -4px rgba(#000, 0.2), 0 2px 6px rgba(#000, 0.1);
+@media screen and (min-width: 600px) {
+  .hero {
+    padding-top: 15%;
+  }
 }

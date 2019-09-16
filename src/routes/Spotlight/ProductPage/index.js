@@ -181,7 +181,7 @@ class ProductPage extends Component {
                 <div className={styles.displayRow}>
                   <PageContainer size="SMALL" left>
                     <p className={cnames(styles.heading, styles.displayFour)}>Solution</p>
-                    <p>We iterated on, and validated our <a className={styles.textLink} href="https://s.codepen.io/marchamm/debug/db072c27e8fae842076c7d773972d1b6" target="_blank" rel="noopener noreferrer">Mobile prototype</a>. And after experimenting with new features, our solution included:</p>
+                    <p>We iterated on, and validated our <a className={styles.textLink} href="https://s.codepen.io/marchamm/debug/db072c27e8fae842076c7d773972d1b6" target="_blank" rel="noopener noreferrer">mobile prototype</a>. And after experimenting with new features, our solution included:</p>
                     <List strong className={styles.displayBodySmall}>
                       <ListItem>A colour picker that is always in view</ListItem>
                       <ListItem>Prompting user to select size instead of error states</ListItem>

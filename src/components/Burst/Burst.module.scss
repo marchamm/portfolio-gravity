@@ -20,6 +20,39 @@
   position: absolute;
   bottom: 0;
   width: 100%;
+
+  &.top {
+    top: 0;
+    transform: translateY(-100%);
+    bottom: auto;
+  }
+
+  div:nth-child(1n) {
+    color: #ff5d73;
+  }
+
+  div:nth-child(2n+0) {
+    color: #ff8b6b;
+  }
+
+  div:nth-child(3n+0) {
+    color: #ffe58d;
+  }
+
+  // div:nth-child(4n+0) {
+  //   color: #baff83;
+  // }
+  //
+  // div:nth-child(5n+0) {
+  //   color: #5af1ff;
+  // }
+  //
+  // div:nth-child(6n+0) {
+  //   color: #4d8cff;
+  // }
+  // div:nth-child(7n+0) {
+  //   color: #794cff;
+  // }
 }
 
 .burstItem {
@@ -40,7 +73,6 @@
   top: 48px;
   right: 48px;
   z-index: 14;
-  cursor: pointer;
 
   .core {
     background: $neutral200;
@@ -55,6 +87,7 @@
 .pulse {
   .core {
     background: $tertiary;
+    cursor: pointer;
   }
   &:after,
   &:before {

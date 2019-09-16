@@ -9,7 +9,7 @@ var burstConfig = {
   rotate: 480,          // rotation of clones starting from 0
   angle: 0,             // direction of burst in degrees, 0 only support at the moment
   opacity: 1,           // end opacity of clone
-  origin: 'element',    // burst starting point
+  origin: 'top',    // burst starting point
   element: null,        // element to use as clone
   rate: 80,             // time between clones
   scale: 1,             // final clone size starting from 1
@@ -61,12 +61,10 @@ class Burst extends Component {
   }
 
   burst(item, index) {
-    // const copy = React.cloneElement(this.burstItems[index])
-    // console.log(copy)
-    // console.log(item, 'meh')
     const el = item
     var spread
     var scale
+    var origin = this.props.position
     var angle
     var transformOrigin
     var rotate = burstConfig.rotate
@@ -80,15 +78,15 @@ class Burst extends Component {
     rotate = Math.random() < 0.5 ? rotate : rotate * -1
     transformOrigin = Math.random() < 0.5 ? 'top left' : 'top right'
 
-    angle = ( el.getBoundingClientRect().top + el.clientHeight * 2 ) * -1
+    // angle = ( el.getBoundingClientRect().top + el.clientHeight * scale) * -1
 
-    // if (burstConfig.origin === 'top'){
-    //   angle = viewport.height + clone.clientHeight * scale * 2
-    //   spread = 0
-    // } else if (burstConfig.origin === 'bottom') {
-    //   angle = (viewport.height + clone.clientHeight * scale * 2) * -1
-    //   spread = 0
-    // }
+
+    if (origin === 'top'){
+      angle = window.innerHeight + el.clientHeight * scale * 4
+      console.log(origin, 'toppen')
+    } else {
+      angle = (window.innerHeight + el.clientHeight * scale ) *-1
+    }
 
     // el.offsetHeight // hack for transitions to work
 
@@ -104,16 +102,22 @@ class Burst extends Component {
 
     const {
       trigger,
+      position,
     } = this.props
 
     const items = this.burstItems
+
+    const classNames = cnames(styles.burstInner, {
+      [styles.top]: position === 'top',
+      [styles.bottom]: position === 'bottom',
+    })
 
     return (
       <React.Fragment>
         <Beacon pulse={this.state.beacon} />
         { this.state.beacon && React.cloneElement(trigger({ onClick: this.trigger })) }
         <div className={styles.burstOuter}>
-          <div className={styles.burstInner}>
+          <div className={classNames}>
             { items.map((item, i) => (
               <div
                 className={styles.burstItem}

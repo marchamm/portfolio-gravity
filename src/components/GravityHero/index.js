@@ -138,7 +138,7 @@ class GravityHero extends Component {
           )}
           clones={6}
         >
-          ❤️
+          <span role="img" aria-label="heart emojo">❤️</span>
         </Burst>
         <div className={styles.hero}>
           <div className={styles.letterContainer}>

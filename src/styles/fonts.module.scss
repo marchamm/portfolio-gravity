@@ -3,6 +3,31 @@ p {
   line-height: 1.5em;
 }
 
+.textLink {
+  color: $primary;
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    background: $neutral200;
+    height: 3px;
+    bottom: 0;
+    width: 100%;
+    border-radius: 2px;
+    transform: translateY(100%);
+  }
+
+  &:hover {
+    &::after {
+      background: $primary;
+    }
+  }
+}
+
 .heading {
   margin-top: 3em;
   margin-bottom: 1em;

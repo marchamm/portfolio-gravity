@@ -3,18 +3,18 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import posed, { PoseGroup } from 'react-pose';
 import Home from './routes/Home/';
 import Spotlight from './routes/Spotlight/';
-import DesignSystem from './routes/Spotlight/DesignSystem';
-import ProductPage from './routes/Spotlight/ProductPage';
 import About from './routes/About/';
 import './styles/foundations.module.scss'
 
 const RouteContainer = posed.div({
   enter: {
     opacity: 1,
-    delay: 600,
+    delay: 500,
+    beforeChildren: true
   },
   exit: {
     opacity: 0,
+    beforeChildren: true
   }
 });
 

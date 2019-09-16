@@ -21,7 +21,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy-production": "cli-confirm \"Do you really want to deploy to PRODUCTION?\" && aws s3 sync build/ s3://staging.mhammarstedt.com",
+    "deploy-production": "cli-confirm \"Do you really want to deploy to PRODUCTION?\" && aws s3 sync build/ s3://mhammarstedt.com",
     "deploy-staging": "aws s3 sync build/ s3://staging.mhammarstedt.com"
   },
   "eslintConfig": {

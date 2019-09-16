@@ -1,21 +1,45 @@
 @import '../../styles/foundations.module.scss';
 
+.wrapper {
+  background: #FFF;
+}
+
 .main {
   width: 100%;
   position: relative;
   z-index: 9;
-  background-image:  url('../../images/light.svg');
-  background-position: top left -700px;
-  background-size: 1200px;
-  background-repeat: no-repeat;
   margin-top: -40vh;
 }
 
 @keyframes bounce {
   0%   { transform: translateY(0); }
-  40% { transform: translateY(-50%); }
+  20% { transform: translateY(-50%); }
+  40% { transform: translateY(0%); }
   80% { transform: translateY(0%); }
   100% { transform: translateY(0%); }
+}
+
+.arrowLink {
+  display: block;
+  position: absolute;
+  left: 50%;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-50%, -100%);
+  top: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+
+  @media screen and (min-width: 768px) {
+    left: 5%;
+    transform: translate(-50%, -150%);
+  }
 }
 
 .arrowBounce {
@@ -23,9 +47,6 @@
   align-items: center;
   width: 32px;
   height: 24px;
-  position: absolute;
-  left: 4%;
-  top: 0;
   color: $primary;
   cursor: pointer;
 
@@ -38,7 +59,19 @@
     transform: scale(-1);
   }
 
-  animation: bounce 1000ms infinite ease-in-out; /* IE 10+, Fx 29+ */
+  animation: bounce 1600ms infinite ease-in-out; /* IE 10+, Fx 29+ */
+}
+
+.infoContainer {
+  background-image: url('../../images/homepageIllo.svg');
+  background-position: bottom;
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding-bottom: 5%;
+}
+
+.spotlightContainer {
+  background: #f5f6fb;
 }
 
 .emoji {

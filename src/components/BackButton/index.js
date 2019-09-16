@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router';
+import { Link } from 'react-router-dom';
 import cnames from 'classnames';
 import styles from './BackButton.module.scss';
 
@@ -15,17 +16,11 @@ class BackButton extends Component {
 
   render() {
     return (
-      <button className={styles.back} onClick={this.goBack}>
-        <span className={cnames(styles.arrow, styles.left)}>
-          <svg xmlns="http://www.w3.org/2000/svg" width="36" height="26" viewBox="0 0 36 26">
-            <g fill="currentColor" fillRule="evenodd">
-              <rect width="32" height="4" y="11"/>
-              <rect width="18" height="4" x="19.071" y="6.071" transform="rotate(45 28.071 8.071)" />
-              <rect width="18" height="4" x="19.071" y="16.071" transform="rotate(-45 28.071 18.071)" />
-            </g>
-          </svg>
-        </span>
-      </button>
+      <Link to="/" className={cnames(styles.back)}>
+        <div>
+          <svg style={{ display: 'block' }} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
+        </div>
+      </Link>
     )
   }
 }

@@ -2,7 +2,7 @@
   margin: 0 auto;
   width: 100%;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
 
   .inner {
     width: 100%;
@@ -18,7 +18,8 @@
   }
 
   &.small {
-    max-width: 720px;
+    max-width: 640px;
+
   }
 
   &.medium {

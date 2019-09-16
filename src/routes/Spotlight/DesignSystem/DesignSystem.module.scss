@@ -1,14 +1,92 @@
 @import '../../../styles/foundations.module.scss';
 
+
+.imageGallery {
+  max-width: 320px;
+  min-width: 280px;
+  overflow: hidden;
+  height: auto;
+  align-self: flex-start;
+  margin-top: 48px;
+  flex: 1;
+
+  @media screen and (min-width: 768px) {
+    margin-left: 32px;
+  }
+
+  .imageGalleryContainer {
+    border-radius: 8px;
+    background: #f5f6fb;
+    padding: 12px;
+  }
+
+  .noPadding {
+    padding: 0;
+    background: transparent;
+
+    .imageWrapper {
+      box-shadow: none;
+      max-width: 240px;
+    }
+  }
+
+  .imageThumbnails {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .imageWrapper {
+    margin: 4px;
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    // box-shadow: 0 2px 8px -8px rgba(0,0,0,1);
+  }
+
+  .imageLandscape {
+    &:after {
+      content: "";
+      display: block;
+      padding-bottom: 75%;
+    }
+  }
+
+  .imageSquare {
+    &:after {
+      content: "";
+      display: block;
+      padding-bottom: 100%;
+    }
+  }
+
+  .imageSquare,
+  .imageLandscape {
+    .imageContainer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+  }
+
+  .image {
+    object-fit: cover;
+    width: 100%;
+    border-radius: 0;
+  }
+}
+
 .process {
   margin-bottom: 64px;
 
   .step {
     display: flex;
     position: relative;
-    padding-top: 8vh;
-    padding-bottom: 30vh;
-    opacity: 0.4;
+    padding-top: 50px;
+    padding-bottom: 100px;
+    opacity: 1;
     transition: all 600ms ease-in-out;
 
     &.active {
@@ -38,17 +116,17 @@
 
       &.active {
         span {
-          background: $primary;
-          box-shadow: 0 0 0 4px #FFF, 0 0 0 6px $primary;
+          // background: $primary;
+          // box-shadow: 0 0 0 4px #FFF, 0 0 0 6px $primary;
         }
 
         &:before {
-          border-color: $primary;
+          // border-color: $primary;
           transform: translateX(16px);
         }
 
         &:after {
-          border-color: $primary;
+          // border-color: $primary;
         }
       }
 
@@ -58,7 +136,7 @@
         top: 6px;
         height: 1px;
         width: 16px;
-        border-top: 2px dashed $neutral200;
+        // border-top: 2px dashed $neutral200;
         border-radius: 2px;
         transform: translateX(0);
         transition: all 600ms cubic-bezier(.75,-0.5,0,1.75);
@@ -81,8 +159,12 @@
       align-items: flex-start;
       justify-content: flex-start;
       flex-direction: column;
-      padding-left: 40px;
+      padding-left: 30px;
       width: 100%;
+
+      @media screen and (min-width: 768px) {
+        padding-left: 40px;
+      }
     }
 
     &:first-child {
@@ -159,7 +241,8 @@
   img,
   video {
     width: 100%;
-    border-radius: 16px;
+    border-radius: 8px;
+    display: block;
   }
 
   video {

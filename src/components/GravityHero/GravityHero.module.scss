@@ -18,7 +18,7 @@
   cursor: pointer;
 
   .core {
-    background: $tertiary;
+    background: neutral200;
     position: relative;
     border-radius: 50%;
     width: 12px;
@@ -28,6 +28,9 @@
 }
 
 .pulse {
+  .core {
+    background: $tertiary;
+  }
   &:after,
   &:before {
     content: "";

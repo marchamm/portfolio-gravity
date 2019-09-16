@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
-import { Link, Element, scrollSpy } from 'react-scroll';
+import { Link, Element } from 'react-scroll';
 import cnames from 'classnames';
 import styles from './DesignSystem.module.scss';
 import List, { ListItem } from '../../../components/List';
 import PageContainer from '../../../components/PageContainer';
 import SpotlightHero from '../../../components/SpotlightHero';
-import distribution from './images/distribution.png';
 import distributionModel from './images/distributionModel.svg';
 import centralizedModel from './images/centralizedModel.svg';
 import collaborativeModel from './images/collaborativeModel.svg';

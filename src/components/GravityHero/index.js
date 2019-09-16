@@ -1,82 +1,15 @@
 import React, { Component } from 'react';
 import Parallax from 'parallax-js';
-import cnames from 'classnames';
 import posed from 'react-pose';
 import Burst from '../Burst'
 import styles from './GravityHero.module.scss';
 import '../../styles/utils.module.scss';
-
-const AnimateMessage = posed.div({
-  visible: {
-    opacity: 1,
-    y: 0,
-    x: 0,
-    rotate: 0,
-    originX: '100%',
-    originY: '0%',
-  },
-  hidden: {
-    opacity: 0,
-    y: 4,
-    x: 0,
-    rotate: -4,
-    originX: '100%',
-    originY: '0%',
-    transition: {
-      duration: 100,
-      ease: 'easeInOut',
-    }
-  },
-  initial: {
-    opacity: 0,
-    y: 2,
-    x: 0,
-    rotate: -4,
-    originX: '100%',
-    originY: '0%',
-    transition: {
-      duration: 100,
-      ease: 'easeInOut',
-    }
-  }
-});
 
 const parallaxOptions = {
   limitY: 20,
   invertX: false,
   invertY: false,
   calibrateX: true
-}
-
-const Beacon = (props) => {
-  const classnames = cnames(styles.beacon, {
-    [styles.pulse]: props.isVisible === 'initial',
-  })
-
-  return(
-    <div role="button" className={classnames}>
-      <div className={styles.core} />
-    </div>
-  )
-}
-
-const Message = (props) => {
-  return(
-    <div className={styles.messageContainer}>
-      <AnimateMessage pose={props.pose}>
-        <div className={styles.message}>
-          <div className={styles.underlay} />
-          <div className={styles.title}>
-            I like you, you're curious
-          </div>
-          <div className={styles.description}>
-            Let me know if you want to grab a coffee. I also like coffee.
-          </div>
-          <div className={styles.close} onClick={props.toggleVisible} />
-        </div>
-      </AnimateMessage>
-    </div>
-  )
 }
 
 const Letter = posed.div({
@@ -108,6 +41,7 @@ class GravityHero extends Component {
     this.setState({
       isVisible: this.state.isVisible === 'visible' ? 'hidden' : 'visible',
     })
+    console.log('toggle')
   }
 
   componentDidMount() {
@@ -126,17 +60,16 @@ class GravityHero extends Component {
   render() {
     return (
       <div className={styles.heroContainer}>
-        <Beacon isVisible={this.state.isVisible} toggleVisible={this.toggleVisible} />
-        <Message toggleVisible={this.toggleVisible} pose={this.state.isVisible}/>
         <Burst
           trigger={({ onClick }) => (
             // <button onClick={onClick}>Trigger</button>
-
-            <div onClick={onClick} role="button" className={styles.beacon}>
-              <div className={styles.core} />
-            </div>
+            <React.Fragment>
+              <div onClick={onClick} role="button" className={styles.beacon}>
+                <div className={styles.core} />
+              </div>
+            </React.Fragment>
           )}
-          clones={6}
+          clones={24}
         >
           <span role="img" aria-label="heart emojo">❤️</span>
         </Burst>

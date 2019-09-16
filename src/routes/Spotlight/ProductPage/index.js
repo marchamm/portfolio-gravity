@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link, Element, Events, scrollSpy } from 'react-scroll';
+import { Link, Element } from 'react-scroll';
 import cnames from 'classnames';
 import styles from './ProductPage.module.scss';
 import List, { ListItem } from '../../../components/List';

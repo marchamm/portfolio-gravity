@@ -1,3 +1,5 @@
+@import '../../styles/foundations.module.scss';
+
 .burstOuter {
   position: fixed;
   top: 0;
@@ -21,4 +23,56 @@
 }
 
 .burstItem {
+}
+
+@keyframes pulse {
+  0% { transform: scale(1) }
+  100% { transform: scale(6); opacity: 0; }
+}
+
+.beacon {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 48px;
+  right: 48px;
+  z-index: 14;
+  cursor: pointer;
+
+  .core {
+    background: $neutral200;
+    position: relative;
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    z-index: 9;;
+  }
+}
+
+.pulse {
+  .core {
+    background: $tertiary;
+  }
+  &:after,
+  &:before {
+    content: "";
+    position: absolute;
+    background-color: rgba($primary, 0.4);
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    z-index: 6;
+
+    animation-name: pulse;
+    animation-duration: 2000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(-0.5,1,0.5,1.75);
+  }
+
+  &:after {
+    animation-delay: 400ms;
+  }
 }

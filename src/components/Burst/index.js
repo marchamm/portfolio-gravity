@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import cnames from 'classnames';
 import styles from './Burst.module.scss';
 
 var burstConfig = {
-  clones: 4,            // number of clones
+  clones: 12,            // number of clones
   randomClones: true,   // number of clones will differ by 0-50% for each burst
-  spread: 0.8,            // spread of clones
+  spread: 0.5,            // spread of clones
   rotate: 480,          // rotation of clones starting from 0
   angle: 0,             // direction of burst in degrees, 0 only support at the moment
   opacity: 1,           // end opacity of clone
@@ -13,12 +14,24 @@ var burstConfig = {
   rate: 80,             // time between clones
   scale: 1,             // final clone size starting from 1
   randomScale: true,    // final clone size will differ by 0-50% for each clone
-  time: 8000,              // time of animation for each clone
+  time: 6000,              // time of animation for each clone
 }
 
 let viewport = {
   height: window.innerHeight,
   width: window.innerWidth
+}
+
+const Beacon = (props) => {
+  const classnames = cnames(styles.beacon, {
+    [styles.pulse]: props.pulse,
+  })
+
+  return(
+    <div role="button" className={classnames}>
+      <div className={styles.core} />
+    </div>
+  )
 }
 
 class Burst extends Component {
@@ -28,6 +41,9 @@ class Burst extends Component {
     this.burstItemsClone = []
     this.burst = this.burst.bind(this);
     this.trigger = this.trigger.bind(this);
+    this.state = {
+      beacon: true
+    }
   }
 
   trigger() {
@@ -39,12 +55,15 @@ class Burst extends Component {
     items.forEach((item, i) => {
       setTimeout(() => this.burst(item, i), burstConfig.rate * i)
     });
+    this.setState({
+      beacon: false,
+    })
   }
 
   burst(item, index) {
     // const copy = React.cloneElement(this.burstItems[index])
     // console.log(copy)
-    console.log(item, 'meh')
+    // console.log(item, 'meh')
     const el = item
     var spread
     var scale
@@ -91,13 +110,15 @@ class Burst extends Component {
 
     return (
       <React.Fragment>
-        { React.cloneElement(trigger({ onClick: this.trigger })) }
+        <Beacon pulse={this.state.beacon} />
+        { this.state.beacon && React.cloneElement(trigger({ onClick: this.trigger })) }
         <div className={styles.burstOuter}>
           <div className={styles.burstInner}>
-            { items.map(item => (
+            { items.map((item, i) => (
               <div
                 className={styles.burstItem}
                 ref={n => this.burstItemsClone.push(n)}
+                key={item+i}
               >
                 { item }
               </div>

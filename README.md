@@ -1,7 +1,9 @@
 # portfolio-gravity
-This is the repository for the [https://mhammarstedt.com](https://mhammarstedt.com).
+This is the repository for [https://mhammarstedt.com](https://mhammarstedt.com).
 
 Nothing particularly maintained in here but feel free to poke around :)
+
+---
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

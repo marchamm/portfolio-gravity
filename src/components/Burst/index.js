@@ -28,7 +28,7 @@ const Beacon = (props) => {
   })
 
   return(
-    <div role="button" className={classnames}>
+    <div className={classnames}>
       <div className={styles.core} />
     </div>
   )

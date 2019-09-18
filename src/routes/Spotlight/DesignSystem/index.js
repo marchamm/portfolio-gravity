@@ -12,7 +12,6 @@ import collaborativeModel from './images/collaborativeModel.svg';
 
 class Indicator extends Component {
   handleSetActive(to) {
-    console.log('here')
     let e = document.getElementsByName(to);
     e[0].classList.add(styles.active);
   }

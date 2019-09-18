@@ -118,7 +118,6 @@ function clone(item) {
 
     }, rate * i );
   }
-
 }
 
 function animate( el, viewport, clone ) {

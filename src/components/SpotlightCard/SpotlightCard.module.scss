@@ -92,6 +92,7 @@
   display: flex;
   align-items: center;
   font-size: 16px;
+
   .icon {
     display: block;
     margin-right: 8px;
@@ -101,7 +102,7 @@
 }
 
 .cta {
-  color: #3a7ae0;
+  color: $primary;
   display: flex;
   align-items: center;
   margin-top: 16px;

@@ -2,6 +2,7 @@
 
 .label {
   text-transform: uppercase;
+  background: rgba($neutral200,0.5);
   background: $neutral100;
   line-height: 1;
   padding: 0 12px;
@@ -17,10 +18,10 @@
   }
 }
 
-
 .inverted {
-  background: rgba(#FFF,0.1);
-  color: #FFF;
+  background: rgba($neutral300,0.2);
+  // background: none;
+  // color: #FFF;
   &:after {
     background: rgba(#FFF, 0.5);
   }

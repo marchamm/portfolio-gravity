@@ -30,9 +30,11 @@ const List = ({ children, strong, progress, className }) => {
     [className]: className,
   });
 
+  const listItems = React.Children.toArray(children);
+
   return (
     <ul className={classNames}>
-      { children.map(item => <ListItem item={item.props.children} progress={progress} key={item.props.children} />) }
+      { listItems.map(item => <ListItem item={item.props.children} progress={progress} key={item.props.children} />) }
     </ul>
   )
 }

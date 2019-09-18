@@ -2,7 +2,11 @@
 
 .customList {
   padding-left: 48px;
-  margin-top: 48px;
+  margin-top: 24px;
+
+  @media screen and (min-width: 480px) {
+      margin-top: 48px;
+  }
 
   &.strong {
     font-weight: bold;
@@ -23,7 +27,7 @@
   width: 20px;
   top: 12px;
   left: -40px;
-  color: $neutral500;
+  color: $neutral300;
 
   svg {
     width: 100%;

@@ -61,7 +61,7 @@ class GravityHero extends Component {
   }
 
   componentWillUnmount() {
-    this.parallax.disable()
+    this.parallax.destroy()
   }
 
   render() {
@@ -71,7 +71,7 @@ class GravityHero extends Component {
           trigger={({ onClick }) => (
             // <button onClick={onClick}>Trigger</button>
             <React.Fragment>
-              <div onClick={onClick} role="button" className={styles.beacon}>
+              <div onClick={onClick} role="button" aria-label="burst animation" className={styles.beacon}>
                 <div className={styles.core} />
               </div>
             </React.Fragment>

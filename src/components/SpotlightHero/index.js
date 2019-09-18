@@ -9,7 +9,7 @@ const SpotlightHero = (props) =>  {
   return (
     <div className={cnames(styles.hero)}>
       <PageContainer size="SMALL" padding>
-        <div className={styles.displayOne}>{title}</div>
+        <h1 className={styles.displayOne}>{title}</h1>
         <p className={styles.displayFive}>{caption}</p>
         <p className={cnames(styles.displayBodySmall, styles.muted)}><i>{disclaimer}</i></p>
       </PageContainer>

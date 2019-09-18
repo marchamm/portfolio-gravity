@@ -56,7 +56,7 @@ const Spotlight = ({ match }) => {
                 title="Prototyping as a tool for solving complex UI problems."
                 label="Prototype"
                 description="Tackling product configuration at scale in a unique environment."
-                cta="Prototype, Codepen"
+                cta="Codepen"
                 image={spotlightImages.prototyping}
                 external
                 target="_blank"
@@ -67,7 +67,7 @@ const Spotlight = ({ match }) => {
                 title="Animating any object with different effects"
                 label="Plugin"
                 description="Working on a small little plugin to make burst animations a breeze."
-                cta="Plugin, GitHub"
+                cta="GitHub"
                 image={spotlightImages.burstAnimation}
                 external
                 target="_blank"

@@ -10,10 +10,9 @@
   text-decoration: none;
   display: flex;
   flex: 1;
-  flex-direction: column;
   border-radius: 16px;
   margin: 16px;
-  min-width: 280px;
+  min-width: 90%;
   transition: transform 400ms linear, box-shadow 400ms linear;
   box-shadow:
     0 4px 12px -8px rgba(#000, 0.1),
@@ -21,9 +20,8 @@
   ;
   overflow: hidden;
 
-  @media screen and (min-width: 480px) {
-    min-width: 480px;
-    max-width: 740px;
+  @media screen and (min-width: 900px) {
+    min-width: 40%;
     margin: 32px;
   }
 }
@@ -32,17 +30,25 @@
   padding: 24px;
   line-height: 1.6em;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   z-index: 2;
   @media screen and (min-width: 480px) {
     padding: 32px;
   }
   .lead {
     margin-top: 16px;
+    margin-bottom: 0;
     padding-right: 40%;
   }
 }
+
+.labelContainer {
+  display: inline-block;
+}
+
 .interactive .body {
-  padding-bottom: 0;
 }
 .interactive:focus {
   box-shadow: 0 0 0 4px rgba($primary, 0.5);
@@ -75,11 +81,30 @@
   background-size: cover;
 }
 
+.ctaContainer {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.ctaSubtitle {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  .icon {
+    display: block;
+    margin-right: 8px;
+    width: 24px;
+    height: 24px;
+  }
+}
+
 .cta {
   color: #3a7ae0;
   display: flex;
   align-items: center;
-  padding: 16px 8px 48px 0;
+  margin-top: 16px;
   transition: all 100ms ease-in-out;
   z-index: 3;
   font-weight: bold;
@@ -88,6 +113,7 @@
   position: relative;
   user-select: none;
   text-decoration: none;
+  flex: 1;
 
   .arrow {
     margin-left: 16px;

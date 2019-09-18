@@ -16,7 +16,6 @@ class Indicator extends Component {
   handleSetActive(to) {
     let e = document.getElementsByName(to);
     e[0].classList.add(styles.active);
-    console.log('here', to)
   }
 
   render() {
@@ -40,13 +39,6 @@ class Indicator extends Component {
 }
 
 class ProductPage extends Component {
-
-  componentDidMount() {
-    setTimeout(() => {
-      window.scrollTo(0, 0)
-    }, 400);
-    console.log('pp mounted')
-  }
 
   render () {
 

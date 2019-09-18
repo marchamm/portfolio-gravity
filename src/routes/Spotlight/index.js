@@ -29,7 +29,7 @@ const Spotlight = ({ match }) => {
       <div className={cnames(styles.wrapper)}>
         <BackButton />
         <div className={styles.caseContainer}>
-          <Route exact path="/spotlight/product-page" component={ProductPage} key="productPage" />
+          <Route exact path="/spotlight/product-page" component={ProductPage} key="productPage" onUpdate={() => console.log('update')} />
           <Route exact path="/spotlight/design-system" component={DesignSystem} key="designSystem" />
         </div>
         <div className={styles.spotlightContainer}>

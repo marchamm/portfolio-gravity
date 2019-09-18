@@ -83,9 +83,8 @@ class Burst extends Component {
 
     if (origin === 'top'){
       angle = window.innerHeight + el.clientHeight * scale * 4
-      console.log(origin, 'toppen')
     } else {
-      angle = (window.innerHeight + el.clientHeight * scale ) *-1
+      angle = (el.getBoundingClientRect().top + el.clientHeight * scale) * -1
     }
 
     // el.offsetHeight // hack for transitions to work

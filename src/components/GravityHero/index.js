@@ -6,7 +6,7 @@ import styles from './GravityHero.module.scss';
 import '../../styles/utils.module.scss';
 
 const parallaxOptions = {
-  limitY: 40,
+  limitY: 30,
   invertX: false,
   invertY: false,
   calibrateX: true
@@ -18,19 +18,16 @@ const Gravity = posed.div({
     },
     open: {
       x: 0,
-      staggerChildren: 20,
-      delayChildren: 200,
+      staggerChildren: 40,
     }
 })
 
 const Letter = posed.div({
   closed: {
-    x: (props) => (-100 * props.offset),
-    opacity: 0,
+    x: (props) => (-20 * props.offset),
   },
   open: {
-    x: (props) => (-25 * props.offset),
-    opacity: 1,
+    x: (props) => (-4 * props.offset),
     transition: {
       duration: 1000,
       type: 'spring',
@@ -79,7 +76,7 @@ class GravityHero extends Component {
               </div>
             </React.Fragment>
           )}
-          clones={20}
+          clones={8}
           position="bottom"
         >
           <svg viewBox="0 0 20 18.35" width="28" fill="currentColor" className={styles.heart}>

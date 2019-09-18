@@ -38,12 +38,6 @@ class Indicator extends Component {
 }
 
 class ProductPage extends Component {
-  componentDidMount() {
-    setTimeout(() => {
-      window.scrollTo(0, 0)
-    }, 400);
-    console.log('ds mounted')
-  }
 
   render () {
     const scrollOffset = -40;
@@ -168,7 +162,7 @@ class ProductPage extends Component {
                     <p>We keep focusing on adoption and ensuring that we build the right things.</p>
                     <p>We're evolving our visual language and starting to see more contributions from other teams and individuals.</p>
                     <div className={cnames(styles.heading, styles.displayFour)}>Check it out</div>
-                    <a href="https://redbubble.design" target="_blank" rel="noopener noreferrer" className={styles.textLink}>https://redubble.design</a>
+                    <a href="https://redbubble.design" target="_blank" rel="noopener noreferrer" className={styles.textLink}>https://redbubble.design</a>
                   </PageContainer>
                   <div className={styles.imageGallery}>
                     <img src={collaborativeModel} alt="operating model, collaborative"/>

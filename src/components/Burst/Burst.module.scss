@@ -20,6 +20,7 @@
   position: absolute;
   bottom: 0;
   width: 100%;
+  color: $primary;
 
   &.top {
     top: 0;
@@ -28,15 +29,15 @@
   }
 
   div:nth-child(1n) {
-    color: #ff5d73;
+    opacity: 1;
   }
 
   div:nth-child(2n+0) {
-    color: #ff8b6b;
+    opacity: 0.8;
   }
 
   div:nth-child(3n+0) {
-    color: #ffe58d;
+    opacity: 0.6;
   }
 
   // div:nth-child(4n+0) {

@@ -1,0 +1,74 @@
+@import '../../styles/foundations.module.scss';
+
+.customList {
+  padding-left: 48px;
+  margin-top: 24px;
+
+  @media screen and (min-width: 480px) {
+      margin-top: 48px;
+  }
+
+  &.strong {
+    font-weight: bold;
+  }
+
+  li {
+    list-style: none;
+    padding: 0.5em 0;
+    margin: 0;
+    line-height: 1.5em;
+    position: relative;
+  }
+}
+
+.bullet {
+  display: block;
+  position: absolute;
+  width: 20px;
+  top: 12px;
+  left: -40px;
+  color: $neutral300;
+
+  svg {
+    width: 100%;
+  }
+}
+
+.progress {
+  height: 100%;
+  top: 18px;
+  left: -30px;
+
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 6px;
+    bottom: 0;
+    width: 0;
+    left: 0;
+    transform: translateX(-1px);
+    border-right: 2px dashed #e4e7ec;
+    border-radius: 2px;
+  }
+
+  &:after {
+    content: "";
+    display: block;
+    background: $primary;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.progressList {
+  li:last-child {
+    .progress {
+      &:before {
+        display: none;
+      }
+    }
+  }
+}

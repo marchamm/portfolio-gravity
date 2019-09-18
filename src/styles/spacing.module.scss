@@ -1,0 +1,47 @@
+@media screen and (min-width: 320px) {
+
+  .spSmall {
+    padding: calc(16px + (24 - 16) * ((100vw - 300px) / (1600 - 300)));
+  }
+
+  .spMedium {
+    padding: calc(24px + (32 - 24) * ((100vw - 300px) / (1600 - 300)));
+  }
+
+  .spLarge {
+    padding: calc(48px + (64 - 48) * ((100vw - 300px) / (1600 - 300)));
+  }
+
+  .spDisplay {
+    padding: calc(96px + (128 - 96) * ((100vw - 300px) / (1600 - 300)));
+  }
+}
+
+@media screen and (min-width: 1600px) {
+
+  .spSmall {
+    padding: 24px;
+  }
+
+  .spMedium {
+    padding: 32px;
+  }
+
+  .spLarge {
+    padding: 64px;
+  }
+
+  .spDisplay {
+    padding: 128px;
+  }
+}
+
+.spHorisontal {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.spVertical {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}

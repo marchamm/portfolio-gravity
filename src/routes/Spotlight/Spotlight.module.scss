@@ -1,0 +1,21 @@
+@import '../../styles/foundations.module.scss';
+
+.container {
+  background-image: url('../../images/wave.svg');
+  background-position: top;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.caseContainer {
+  background-image: url('../../images/waveInverted.svg'), url('../../images/wave.svg');
+  background-position: bottom, top;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: #FFF;
+  position: relative;
+}
+
+.spotlightContainer {
+  background-color: #f5f6fc;
+}

@@ -1,0 +1,112 @@
+@import '../../styles/foundations.module.scss';
+
+.burstOuter {
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.burstInner {
+  transform: translateY(100%);
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  color: $primary;
+
+  &.top {
+    top: 0;
+    transform: translateY(-100%);
+    bottom: auto;
+  }
+
+  div:nth-child(1n) {
+    opacity: 1;
+  }
+
+  div:nth-child(2n+0) {
+    opacity: 0.8;
+  }
+
+  div:nth-child(3n+0) {
+    opacity: 0.6;
+  }
+
+  // div:nth-child(4n+0) {
+  //   color: #baff83;
+  // }
+  //
+  // div:nth-child(5n+0) {
+  //   color: #5af1ff;
+  // }
+  //
+  // div:nth-child(6n+0) {
+  //   color: #4d8cff;
+  // }
+  // div:nth-child(7n+0) {
+  //   color: #794cff;
+  // }
+}
+
+.burstItem {
+}
+
+@keyframes pulse {
+  0% { transform: scale(1) }
+  100% { transform: scale(6); opacity: 0; }
+}
+
+.beacon {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 48px;
+  right: 48px;
+  z-index: 14;
+
+  .core {
+    background: $neutral200;
+    position: relative;
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    z-index: 9;;
+  }
+}
+
+.pulse {
+  .core {
+    background: $tertiary;
+    cursor: pointer;
+  }
+  &:after,
+  &:before {
+    content: "";
+    position: absolute;
+    background-color: rgba($primary, 0.4);
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    z-index: 6;
+
+    animation-name: pulse;
+    animation-duration: 2000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(-0.5,1,0.5,1.75);
+  }
+
+  &:after {
+    animation-delay: 400ms;
+  }
+}

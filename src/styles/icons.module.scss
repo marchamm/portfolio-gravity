@@ -1,0 +1,15 @@
+.arrow {
+  display: flex;
+  align-items: center;
+  width: 24px;
+  height: 16px;
+  transition: transform 400ms cubic-bezier(0.680, -1, 0.265, 3);
+
+  svg {
+    width: 100%;
+  }
+
+  &.left {
+    transform: scale(-1);
+  }
+}

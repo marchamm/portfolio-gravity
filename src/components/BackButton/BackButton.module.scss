@@ -1,0 +1,21 @@
+@import '../../styles/foundations.module.scss';
+
+.back {
+  position: fixed;
+  top: 2vw;
+  left: 2vw;
+  padding: 0;
+  cursor: pointer;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 500px;
+  color: $primary;
+  z-index: 99;
+  background: #FFF;
+  appearance: none;
+  border: none;
+  box-shadow: 0 4px 8px -4px rgba(#000, 0.2), 0 2px 6px rgba(#000, 0.1);
+}

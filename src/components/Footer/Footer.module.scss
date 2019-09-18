@@ -1,0 +1,34 @@
+@import '../../styles/foundations.module.scss';
+
+.footerSection {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 40px;
+  background: #FFF;
+  z-index: 2;
+
+  @media screen and (min-width: 480px) {
+    padding-top: 140px;
+  }
+
+  &:before {
+    content: "";
+    display: block;
+    background-image: url(../../images/wave.svg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    pointer-events: none;
+  }
+}
+@media screen and (min-width: 480px) {
+  .section {
+    padding-top: 80px;
+    margin-top: 96px;
+  }
+}

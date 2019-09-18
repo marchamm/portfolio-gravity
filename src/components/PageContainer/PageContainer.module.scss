@@ -1,0 +1,40 @@
+.outer {
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+
+  .inner {
+    width: 100%;
+  }
+
+  &.padding {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  &.left {
+    margin-left: 0;
+  }
+
+  &.small {
+    max-width: 640px;
+
+  }
+
+  &.medium {
+    max-width: 960px;
+  }
+
+  &.large {
+    max-width: 1280px;
+  }
+
+  &.xlarge {
+    max-width: 1600px;
+  }
+
+  &.display {
+    min-height: 600px;
+  }
+}

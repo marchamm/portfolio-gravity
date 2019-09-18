@@ -1,0 +1,15 @@
+.displaySplash {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  .displayItem {
+    padding: 0 2vw;
+    min-width: 240px;
+    flex: 1;
+
+    img {
+      width: 100%;
+    }
+  }
+}

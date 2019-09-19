@@ -3,32 +3,19 @@
 .footerSection {
   position: relative;
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
-  padding-top: 40px;
+  padding-top: 20%;
+  padding-bottom: 50%;
   background: #FFF;
+  background-image: url('../../images/footerIllo-02.svg'), url('../../images/wave.svg');
+  background-position: bottom, top;
+  background-size: 100%;
+  background-repeat: no-repeat;
   z-index: 2;
-
-  @media screen and (min-width: 480px) {
-    padding-top: 140px;
-  }
-
-  &:before {
-    content: "";
-    display: block;
-    background-image: url(../../images/wave.svg);
-    background-size: 100%;
-    background-repeat: no-repeat;
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    top: 0;
-    pointer-events: none;
-  }
 }
-@media screen and (min-width: 480px) {
-  .section {
-    padding-top: 80px;
-    margin-top: 96px;
-  }
+
+.nocopyright {
+  text-align: center;
+  padding-top: 100px;
 }

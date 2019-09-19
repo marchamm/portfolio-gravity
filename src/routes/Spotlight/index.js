@@ -12,14 +12,12 @@ import styles from'./Spotlight.module.scss';
 import productPageImage from '../../images/illustration-productpage.jpg';
 import designSystemImage from '../../images/illustration-bird.jpg';
 import prototypingImage from '../../images/illustration-config.jpg';
-import eCommerceImage from '../../images/illustration-maxwell.jpg';
 import burstAnimation from '../../images/illustration-burst.jpg';
 
 const spotlightImages = {
   productPage: productPageImage,
   designSystem: designSystemImage,
   prototyping: prototypingImage,
-  eCommerce: eCommerceImage,
   burstAnimation: burstAnimation,
 }
 
@@ -29,7 +27,7 @@ const Spotlight = ({ match }) => {
       <div className={cnames(styles.wrapper)}>
         <BackButton />
         <div className={styles.caseContainer}>
-          <Route exact path="/spotlight/product-page" component={ProductPage} key="productPage" onUpdate={() => console.log('update')} />
+          <Route exact path="/spotlight/product-page" component={ProductPage} key="productPage" />
           <Route exact path="/spotlight/design-system" component={DesignSystem} key="designSystem" />
         </div>
         <div className={styles.spotlightContainer}>

@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 import { Link, Element } from 'react-scroll';
 import cnames from 'classnames';
-import styles from './DesignSystem.module.scss';
+// import styles from './DesignSystem.module.scss';
+import styles from '../Spotlight.module.scss'
 import List, { ListItem } from '../../../components/List';
 import PageContainer from '../../../components/PageContainer';
 import SpotlightHero from '../../../components/SpotlightHero';
@@ -43,6 +45,11 @@ class ProductPage extends Component {
 
     return (
       <React.Fragment>
+        <Helmet>
+          <meta charSet="utf-8" />
+          <title>Design System - Case Study</title>
+          <meta name="description" content="Unite product teams around a shared visual language and empower them to create scalable, high-quality products." />
+        </Helmet>
         <SpotlightHero
           title="Design System"
           caption="Unite product teams around a shared visual language and empower them to create scalable, high-quality products."

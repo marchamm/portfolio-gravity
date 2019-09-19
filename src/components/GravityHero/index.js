@@ -76,7 +76,7 @@ class GravityHero extends Component {
               </div>
             </React.Fragment>
           )}
-          clones={8}
+          clones={16}
           position="bottom"
         >
           <svg viewBox="0 0 20 18.35" width="28" fill="currentColor" className={styles.heart}>

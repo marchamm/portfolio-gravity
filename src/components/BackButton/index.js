@@ -16,7 +16,7 @@ class BackButton extends Component {
 
   render() {
     return (
-      <Link to="/" className={cnames(styles.back)}>
+      <Link to="/" className={cnames(styles.back)} aria-label="Go back to home">
         <div>
           <svg style={{ display: 'block' }} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
         </div>

@@ -34,7 +34,7 @@ const List = ({ children, strong, progress, className }) => {
 
   return (
     <ul className={classNames}>
-      { listItems.map(item => <ListItem item={item.props.children} progress={progress} key={item.props.children} />) }
+      { listItems.map((item, i) => <ListItem item={item.props.children} progress={progress} key={i} />) }
     </ul>
   )
 }

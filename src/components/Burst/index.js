@@ -3,7 +3,7 @@ import cnames from 'classnames';
 import styles from './Burst.module.scss';
 
 var burstConfig = {
-  clones: 12,            // number of clones
+  clones: 24,            // number of clones
   randomClones: true,   // number of clones will differ by 0-50% for each burst
   spread: 0.5,            // spread of clones
   rotate: 480,          // rotation of clones starting from 0
@@ -11,7 +11,7 @@ var burstConfig = {
   opacity: 1,           // end opacity of clone
   origin: 'top',    // burst starting point
   element: null,        // element to use as clone
-  rate: 80,             // time between clones
+  rate: 120,             // time between clones
   scale: 1,             // final clone size starting from 1
   randomScale: true,    // final clone size will differ by 0-50% for each clone
   time: 6000,              // time of animation for each clone

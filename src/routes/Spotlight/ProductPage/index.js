@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import { Helmet } from 'react-helmet';
 import { Link, Element } from 'react-scroll';
 import cnames from 'classnames';
-import styles from './ProductPage.module.scss';
+// import styles from './ProductPage.module.scss';
+import styles from '../Spotlight.module.scss'
 import List, { ListItem } from '../../../components/List';
 import PageContainer from '../../../components/PageContainer';
 import SpotlightHero from '../../../components/SpotlightHero';
@@ -46,6 +48,11 @@ class ProductPage extends Component {
 
     return (
       <React.Fragment>
+        <Helmet>
+          <meta charSet="utf-8" />
+          <title>Product Page - Case Study</title>
+          <meta name="description" content="Be the fastest, unique shopping experience our customers have ever seen." />
+        </Helmet>
         <SpotlightHero
           title="Product Page"
           caption="Be the fastest, unique shopping experience our customers have ever seen."
@@ -67,7 +74,7 @@ class ProductPage extends Component {
               <Indicator to="pp-overview" onSetActive={this.handleSetActive}/>
               <div className={cnames(styles.spMedium, styles.spHorisontal, styles.stepContent)}>
                 <PageContainer size="SMALL" left>
-                  <div className={styles.displayTwo}>Overview</div>
+                  <h2 className={styles.displayTwo}>Overview</h2>
                   <p>This work was part of an initiative at Redbubble that focused on performance and a technical shift towards a new react based framework. We designed, built and delivered incrementally as we started from scratch.</p>
                   <p>My role was to do research, discovery,  prototyping and test our assumptions.</p>
                   <p>We were a team of 5. Product Manager, Engineers and myself.</p>
@@ -78,7 +85,7 @@ class ProductPage extends Component {
               <Indicator to="pp-strategy" />
               <div className={cnames(styles.spMedium, styles.spHorisontal, styles.stepContent)}>
                 <PageContainer size="SMALL" left>
-                  <div className={styles.displayTwo}>Strategy</div>
+                  <h2 className={styles.displayTwo}>Strategy</h2>
                   <p>With a new platform and experience, we needed to think of a strategy that would allow us to quickly test our assumptions without disrupting the experience of our existing members and visitors.</p>
                   <p>Our solution was to focus on a customer segment that had large volume, and a focused set of needs. For us, this segment proved to be New users from Google Shopping.</p>
                   <p>This segment allowed us to experiment and deliver experiences with limited feature sets quickly, giving us the important quantitative insights we needed to gain confidence in our direction.</p>
@@ -90,7 +97,7 @@ class ProductPage extends Component {
               <div className={cnames(styles.spMedium, styles.spHorisontal, styles.stepContent)}>
                 <div className={styles.displayRow}>
                   <PageContainer size="SMALL" left>
-                    <div className={styles.displayTwo}>Research</div>
+                    <h2 className={styles.displayTwo}>Research</h2>
                     <p>We used historical data and formed new assumptions to help shape our research methods. </p>
                     <p>After running multiple customer sessions and surveys, testing both our old experience and those of our competitors, we ended up with some key insights.
   </p>
@@ -118,7 +125,7 @@ class ProductPage extends Component {
                 </div>
                 <div className={styles.displayRow}>
                   <PageContainer size="SMALL" left>
-                    <p className={cnames(styles.heading, styles.displayFour)}>Testing with confidence</p>
+                    <h3 className={cnames(styles.heading, styles.displayFour)}>Testing with confidence</h3>
                     <p>Because of our initial research telling us so much about our customers offsite discovery. It was important for us to setup an environment that would give us insights that accurately described our customers unique behaviours.</p>
                     <p>We built our own Google Search landing page within our platform. It had a search form that would trigger a real product search within Google Shopping. The query would have applied filters, ensuring that each result would come from our site.</p>
                   </PageContainer>
@@ -140,11 +147,11 @@ class ProductPage extends Component {
                 <div className={styles.displayRow}>
                   <PageContainer size="SMALL" left>
                     <Element name="design">
-                      <div className={styles.displayTwo}>Design</div>
+                      <h2 className={styles.displayTwo}>Design</h2>
                     </Element>
                     <p>The old experience had accumulated features for over 10 years. They had been tested and validated. But our business has grown and users behaviours have changed.</p>
                     <p>Our customer is on the go and knows what they’re looking for. And our experience mainly got in the way.</p>
-                    <p className={cnames(styles.heading, styles.displayFour)}>Problem statements</p>
+                    <h3 className={cnames(styles.heading, styles.displayFour)}>Problem statements</h3>
                     <p>A few key areas came out of our research.</p>
                     <List strong className={styles.displayBodySmall}>
                       <ListItem>How might we instil trust in new users?</ListItem>
@@ -160,7 +167,7 @@ class ProductPage extends Component {
                 </div>
                 <div className={styles.displayRow}>
                   <PageContainer size="SMALL" left>
-                    <p className={cnames(styles.heading, styles.displayFour)}>Design objectives</p>
+                    <h3 className={cnames(styles.heading, styles.displayFour)}>Design objectives</h3>
                     <p>To guide us through our iterations and experiments, we established objectives to set and maintain a direction.</p>
                     <List strong className={styles.displayBodySmall}>
                       <ListItem>Seamless experience</ListItem>
@@ -172,7 +179,7 @@ class ProductPage extends Component {
                 </div>
                 <div className={styles.displayRow}>
                   <PageContainer size="SMALL" left>
-                    <p className={cnames(styles.heading, styles.displayFour)}>Solution</p>
+                    <h2 className={cnames(styles.heading, styles.displayFour)}>Solution</h2>
                     <p>We iterated on, and validated our <a className={styles.textLink} href="https://s.codepen.io/marchamm/debug/db072c27e8fae842076c7d773972d1b6" target="_blank" rel="noopener noreferrer">mobile prototype</a>. And after experimenting with new features, our solution included:</p>
                     <List strong className={styles.displayBodySmall}>
                       <ListItem>A colour picker that is always in view</ListItem>
@@ -196,7 +203,7 @@ class ProductPage extends Component {
               <div className={cnames(styles.spMedium, styles.spHorisontal, styles.stepContent)}>
                 <PageContainer size="SMALL" left>
                   <Element name="outcome">
-                    <div className={styles.displayTwo}>Outcomes</div>
+                    <h2 className={styles.displayTwo}>Outcomes</h2>
                   </Element>
                   <List strong progress className={styles.displayBodySmall}>
                     <ListItem>MVP saw record increases in conversion and ATC</ListItem>

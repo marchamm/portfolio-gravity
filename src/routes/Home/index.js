@@ -12,14 +12,12 @@ import '../../styles/utils.module.scss';
 import productPageImage from '../../images/illustration-productpage.jpg';
 import designSystemImage from '../../images/illustration-bird.jpg';
 import prototypingImage from '../../images/illustration-config.jpg';
-import eCommerceImage from '../../images/illustration-maxwell.jpg';
 import burstAnimation from '../../images/illustration-burst.jpg';
 
 const spotlightImages = {
   productPage: productPageImage,
   designSystem: designSystemImage,
   prototyping: prototypingImage,
-  eCommerce: eCommerceImage,
   burstAnimation: burstAnimation,
 }
 

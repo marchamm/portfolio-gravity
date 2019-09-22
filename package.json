@@ -9,6 +9,7 @@
     "parallax-js": "^3.1.0",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
+    "react-ga": "^2.6.0",
     "react-helmet": "^5.2.1",
     "react-pose": "^4.0.6",
     "react-router": "^4.3.1",
@@ -23,7 +24,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "deploy-production": "cli-confirm \"Do you really want to deploy to PRODUCTION?\" && aws s3 sync build/ s3://mhammarstedt.com --cache-control max-age=31536000",
-    "deploy-staging": "aws s3 sync build/ s3://staging.mhammarstedt.com"
+    "deploy-staging": "aws s3 sync build/ s3://staging.mhammarstedt.com",
+    "invalidate-cache": "aws cloudfront create-invalidation --distribution-id E3250BM72RG68R --paths /index.html && aws cloudfront create-invalidation --distribution-id E3250BM72RG68R --paths /index.html"
   },
   "eslintConfig": {
     "extends": "react-app"

@@ -5,6 +5,7 @@ import posed, { PoseGroup } from 'react-pose';
 import ScrollToTop from './components/ScrollToTop/';
 import GoogleAnalytics from './components/GoogleAnalytics/';
 import Home from './routes/Home/';
+import Test from './routes/Test/';
 import Spotlight from './routes/Spotlight/';
 import './styles/foundations.module.scss'
 
@@ -31,7 +32,7 @@ class App extends Component {
             <Helmet>
                 <meta charSet="utf-8" />
                 <title>Marcus Hammarstedt</title>
-                <meta name="description" content="Hey friend! If you're looking for a Product Designer or UI Developer, I might just be the one. I've got some case studies and other bits for you if you're not convinced." />
+                <meta name="description" content="Hey friend, looking for a Product Designer or UI Developer? I might just be the one. Click through to learn a bit more about me and my work." />
             </Helmet>
             <Route
               render={({ location }) => (
@@ -41,6 +42,7 @@ class App extends Component {
                   >
                     <Switch location={location}>
                       <Route exact path="/" component={Home} key="Home" />
+                      <Route exact path="/test" component={Test} key="Test" />
                       <Route path="/spotlight" component={Spotlight} key="Spotlight" />
                     </Switch>
                   </RouteContainer>

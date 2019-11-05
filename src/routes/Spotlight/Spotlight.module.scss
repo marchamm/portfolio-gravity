@@ -286,3 +286,41 @@
     }
   }
 }
+
+.solutionContainer {
+  display: flex;
+  margin-top: 32px;
+}
+
+.solutionMedia {
+  background: $neutral100;
+  border-radius: 32px;
+  padding: 32px;
+  display: flex;
+}
+
+.solutionItem {
+  margin: 32px;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px -8px rgba(#000, 0.2);
+  overflow: hidden;
+  max-height: 680px;
+}
+
+.solutionIframeContainer {
+  transform: scale(0.8);
+}
+
+.solutionIframe {
+  border: none;
+  min-width: 375px;
+  max-width: 480px;
+  height: 680px;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px -8px rgba(#000, 0.2);
+}
+
+.solutionDescription {
+  padding: 32px;
+  min-width: 40%;
+}

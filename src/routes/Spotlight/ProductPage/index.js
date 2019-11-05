@@ -13,6 +13,15 @@ import breakdown from './images/breakdown-new.jpg';
 import fakeGoogle from './images/fakegoogle.gif';
 import productpage from './images/productpage.mp4';
 import productpageimg from './images/productpage.png';
+import cardModuleA from './images/cardModuleA.jpg';
+import cardModuleB from './images/cardModuleB.jpg';
+import chooseSize  from './images/chooseSize.jpg';
+import colorPicker from './images/colorPicker.jpg';
+import main from './images/main.jpg';
+import mainSelectedColor from './images/mainSelectedColor.jpg';
+import mainSticky from './images/mainSticky.jpg';
+import mainWithPromo from './images/mainWithPromo.jpg';
+import searchBrowse from './images/searchBrowse.jpg';
 
 class Indicator extends Component {
   handleSetActive(to) {
@@ -141,13 +150,13 @@ class ProductPage extends Component {
                 </div>
               </div>
             </Element>
-            <Element name="pp-design" className={styles.step}>
-              <Indicator to="pp-design" />
+            <Element name="pp-discovery" className={styles.step}>
+              <Indicator to="pp-discovery" />
               <div className={cnames(styles.spMedium, styles.spHorisontal, styles.stepContent)}>
                 <div className={styles.displayRow}>
                   <PageContainer size="SMALL" left>
-                    <Element name="design">
-                      <h2 className={styles.displayTwo}>Design</h2>
+                    <Element name="discovery">
+                      <h2 className={styles.displayTwo}>Discovery</h2>
                     </Element>
                     <p>The old experience had accumulated features for over 10 years. They had been tested and validated. But our business has grown and users behaviours have changed.</p>
                     <p>Our customer is on the go and knows what they’re looking for. And our experience mainly got in the way.</p>
@@ -177,7 +186,7 @@ class ProductPage extends Component {
                     </List>
                   </PageContainer>
                 </div>
-                <div className={styles.displayRow}>
+                {/*<div className={styles.displayRow}>
                   <PageContainer size="SMALL" left>
                     <h2 className={cnames(styles.heading, styles.displayFour)}>Solution</h2>
                     <p>We iterated on, and validated our <a className={styles.textLink} href="https://s.codepen.io/marchamm/debug/db072c27e8fae842076c7d773972d1b6" target="_blank" rel="noopener noreferrer">mobile prototype</a>. And after experimenting with new features, our solution included:</p>
@@ -195,6 +204,96 @@ class ProductPage extends Component {
                       Your browser does not support the video tag.
                     </video>
                   </div>
+                </div>*/}
+              </div>
+            </Element>
+            <Element name="pp-delivery" className={styles.step}>
+              <Indicator to="pp-delivery" />
+              <div className={cnames(styles.spMedium, styles.spHorisontal, styles.stepContent)}>
+                <div className={styles.displayRow}>
+                  <PageContainer size="SMALL" left>
+                    <Element name="delivery">
+                      <h2 className={styles.displayTwo}>Delivery</h2>
+                      <p>Through continuous delivery we experimented our way towards the most impactful and user friendly solutions. Some of those solutions are included below.</p>
+                    </Element>
+                  </PageContainer>
+                  <PageContainer left>
+                    <div className={styles.solutionContainer}>
+                      <div className={styles.solutionMedia}>
+                        <div className={styles.solutionItem}>
+                          <img src={main} alt="product page design" />
+                        </div>
+                        <div className={styles.solutionItem}>
+                          <img src={mainSticky} alt="sticky header design" />
+                        </div>
+                      </div>
+                      <div className={styles.solutionDescription}>
+                        <h3 className={cnames(styles.heading, styles.displayTwo)}>Sticky header</h3>
+                        <p>Give the user better opportunities to discover new content.</p>
+                        <List strong className={styles.displayBodySmall}>
+                          <ListItem>Encourage scrolling</ListItem>
+                          <ListItem>Immediate ATC</ListItem>
+                          <ListItem>Always visible</ListItem>
+                        </List>
+                      </div>
+                    </div>
+                    <div className={styles.solutionContainer}>
+                      <div className={styles.solutionMedia}>
+                        <div className={styles.solutionItem}>
+                          <img src={main} alt="product page design" />
+                        </div>
+                        <div className={styles.solutionItem}>
+                          <img src={chooseSize} alt="choose size step" />
+                        </div>
+                      </div>
+                      <div className={styles.solutionDescription}>
+                        <h3 className={cnames(styles.heading, styles.displayTwo)}>No errors</h3>
+                        <p>Introduce a new step if the user hasn't selected a size.</p>
+                        <List strong className={styles.displayBodySmall}>
+                          <ListItem>Increased confidence</ListItem>
+                          <ListItem>No passing blame</ListItem>
+                          <ListItem>Just another step</ListItem>
+                        </List>
+                      </div>
+                    </div>
+                    <div className={styles.solutionContainer}>
+                      <div className={styles.solutionMedia}>
+                        <div className={styles.solutionItem}>
+                          <img src={main} alt="product page design" />
+                        </div>
+                        <div className={styles.solutionItem}>
+                          <img src={colorPicker} alt="choose size step" />
+                        </div>
+                      </div>
+                      <div className={styles.solutionDescription}>
+                        <h3 className={cnames(styles.heading, styles.displayTwo)}>Configuration drawer</h3>
+                        <p>A colour configurator that stays within the viewport.</p>
+                        <List strong className={styles.displayBodySmall}>
+                          <ListItem>Seamless</ListItem>
+                          <ListItem>Easy to configure</ListItem>
+                          <ListItem>Accessible labels</ListItem>
+                        </List>
+                      </div>
+                    </div>
+                    <div className={styles.solutionContainer}>
+                      <div className={styles.solutionMedia}>
+                        <div className={styles.solutionIframeContainer}>
+                          <iframe title="configuration drawer" className={styles.solutionIframe} src="https://codepen.io/marchamm/debug/dZwvvM">
+                            <p>Your browser does not support iframes.</p>
+                          </iframe>
+                        </div>
+                      </div>
+                      <div className={styles.solutionDescription}>
+                        <h3 className={cnames(styles.heading, styles.displayTwo)}>Configuration drawer</h3>
+                        <p>A colour configurator that stays within the viewport.</p>
+                        <List strong className={styles.displayBodySmall}>
+                          <ListItem>Seamless</ListItem>
+                          <ListItem>Easy to configure</ListItem>
+                          <ListItem>Accessible labels</ListItem>
+                        </List>
+                      </div>
+                    </div>
+                  </PageContainer>
                 </div>
               </div>
             </Element>

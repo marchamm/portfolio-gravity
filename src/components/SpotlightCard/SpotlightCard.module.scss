@@ -2,7 +2,7 @@
 
 .content {
   position: relative;
-  background-color: #FFF;
+  background-color: var(--color-sheet);
   background-size: 40%;
   background-position: top -15% right;
   background-repeat: no-repeat;
@@ -51,7 +51,7 @@
 .interactive .body {
 }
 .interactive:focus {
-  box-shadow: 0 0 0 4px rgba($primary, 0.5);
+  box-shadow: 0 0 0 4px rgba(var(--color-primary), 0.5);
   outline: none;
 }
 .content.interactive:hover {
@@ -102,7 +102,7 @@
 }
 
 .cta {
-  color: $primary;
+  color: var(--color-primary);
   display: flex;
   align-items: center;
   margin-top: 16px;
@@ -118,6 +118,6 @@
 
   .arrow {
     margin-left: 16px;
-    color: $tertiary;
+    color: var(--color-tertiary);
   }
 }

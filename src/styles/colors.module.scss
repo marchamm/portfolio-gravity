@@ -1,16 +1,40 @@
-$tertiary: #e03f7f;
-
-$secondary: #f7ee61;
-
-$primary: #3073DF;
-
-$neutral50: #f5f6fb;
-$neutral100: #f3f5f9;
-$neutral200: #e4e7ec;
-$neutral300: #aebdd6;
-$neutral500: #6A768A;
-$neutral700: #39455f;
-
-$highlight: #fdf4d5;
-
-$body: #1f3033;
+:root {
+  --color-tertiary: #e03f7f;
+  --color-primary: #3073df;
+  --color-neutral50: #f5f6fb;
+  --color-neutral100: #f3f5f9;
+  --color-neutral200: #e4e7ec;
+  --color-neutral300: #aebdd6;
+  --color-neutral500: #6a768a;
+  --color-neutral700: #39455f;
+  --color-highlight: #fdf4d5;
+  --color-body: #1f3033;
+  --color-app: #ffffff;
+  --color-border: rgba(57, 69, 95, 0.2);
+  --color-sheet: #ffffff;
+  --color-sheet100: #f5f6fb;
+  --color-sheet200: #f3f5f9;
+  --color-sheet300: #e4e7ec;
+  --shadow-gravityLetter: rgba(9, 31, 38, 0.05);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-tertiary: #e03f7f;
+    --color-primary: #3073DF;
+    --color-neutral50: #f5f6fb;
+    --color-neutral100: #f3f5f9;
+    --color-neutral200: #e4e7ec;
+    --color-neutral300: #aebdd6;
+    --color-neutral500: #6A768A;
+    --color-neutral700: #39455f;
+    --color-highlight: #fdf4d5;
+    --color-body: #e8e8e2;
+    --color-app: #111617;
+    --color-border: rgba(57, 69, 95, 1);
+    --color-sheet: #111617;
+    --color-sheet100: #20292b;
+    --color-sheet200: #20292b;
+    --color-sheet300: #344144;
+    --shadow-gravityLetter: rgba(0, 0, 0, 0.3);
+  }
+}

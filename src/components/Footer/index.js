@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import cnames from 'classnames';
 import PageContainer from '../../components/PageContainer';
 import Label from '../Label';
+import SVG from '../SVG';
 import List, { ListItem } from '../List';
 import styles from './Footer.module.scss';
 import '../../styles/utils.module.scss';
@@ -12,6 +13,12 @@ class Footer extends Component {
   render() {
     return (
       <div className={styles.footerSection}>
+        <div className={styles.topIllustration}>
+          <SVG src="wave" />
+        </div>
+        <div className={styles.bottomIllustration}>
+          <SVG src="footer" />
+        </div>
         <div className={cnames(styles.spLarge)}>
           <PageContainer style={{ position: 'relative' }}>
             <Label title="Social" inverted />

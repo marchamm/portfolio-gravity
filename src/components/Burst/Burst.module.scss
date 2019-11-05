@@ -20,7 +20,7 @@
   position: absolute;
   bottom: 0;
   width: 100%;
-  color: $primary;
+  color: var(--color-primary);
 
   &.top {
     top: 0;
@@ -60,7 +60,7 @@
 }
 
 @keyframes pulse {
-  0% { transform: scale(1) }
+  0% { transform: scale(1); opacity: 0.4; }
   100% { transform: scale(6); opacity: 0; }
 }
 
@@ -76,7 +76,7 @@
   z-index: 14;
 
   .core {
-    background: $neutral200;
+    background: var(--color-neutral200);
     position: relative;
     border-radius: 50%;
     width: 12px;
@@ -87,14 +87,14 @@
 
 .pulse {
   .core {
-    background: $tertiary;
+    background: var(--color-tertiary);
     cursor: pointer;
   }
   &:after,
   &:before {
     content: "";
     position: absolute;
-    background-color: rgba($primary, 0.4);
+    background-color: var(--color-primary);
     border-radius: 50%;
     width: 16px;
     height: 16px;

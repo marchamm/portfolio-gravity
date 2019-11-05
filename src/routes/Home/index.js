@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import cnames from 'classnames';
 import { Link, Element } from 'react-scroll';
 import Footer from '../../components/Footer';
+import SVG from '../../components/SVG';
 import List, { ListItem } from '../../components/List';
 import PageContainer from '../../components/PageContainer';
 import GravityHero from '../../components/GravityHero';
@@ -9,10 +10,10 @@ import SpotlightCard from '../../components/SpotlightCard';
 import styles from './Home.module.scss';
 import '../../styles/utils.module.scss';
 
-import productPageImage from '../../images/illustration-productpage.jpg';
-import designSystemImage from '../../images/illustration-bird.jpg';
-import prototypingImage from '../../images/illustration-config.jpg';
-import burstAnimation from '../../images/illustration-burst.jpg';
+import productPageImage from '../../images/illustration-productpage.png';
+import designSystemImage from '../../images/illustration-bird.png';
+import prototypingImage from '../../images/illustration-config.png';
+import burstAnimation from '../../images/illustration-burst.png';
 
 const spotlightImages = {
   productPage: productPageImage,
@@ -32,6 +33,9 @@ class Home extends Component {
           <GravityHero />
           <div className={styles.main}>
             <div className={styles.infoContainer}>
+              <div className={styles.bottomIllustration}>
+                <SVG src="homeIllustration" />
+              </div>
               <PageContainer padding size="SMALL" left display>
                 <Element name="intro" className={styles.spMedium}>
                   <h2 className={styles.displayOne}>Hello!</h2>

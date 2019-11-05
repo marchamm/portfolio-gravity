@@ -2,8 +2,7 @@
 
 .label {
   text-transform: uppercase;
-  background: rgba($neutral200,0.5);
-  background: $neutral100;
+  background: var(--color-sheet200);
   line-height: 1;
   padding: 0 12px;
   height: 32px;
@@ -15,14 +14,5 @@
   margin-top: 48px;
   &:first-of-type {
     margin-top: 0;
-  }
-}
-
-.inverted {
-  background: rgba($neutral300,0.2);
-  // background: none;
-  // color: #FFF;
-  &:after {
-    background: rgba(#FFF, 0.5);
   }
 }

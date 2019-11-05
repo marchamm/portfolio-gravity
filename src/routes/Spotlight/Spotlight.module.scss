@@ -1,23 +1,23 @@
 @import '../../styles/foundations.module.scss';
 
 .container {
-  background-image: url('../../images/wave.svg');
+  // background-image: url('../../images/wave.svg');
   background-position: top;
   background-size: contain;
   background-repeat: no-repeat;
 }
 
 .caseContainer {
-  background-image: url('../../images/waveInverted.svg'), url('../../images/wave.svg');
+  // background-image: url('../../images/waveInverted.svg'), url('../../images/wave.svg');
   background-position: bottom, top;
   background-size: contain;
   background-repeat: no-repeat;
-  background-color: #FFF;
+  background-color: var(--color-sheet);
   position: relative;
 }
 
 .spotlightContainer {
-  background-color: #f5f6fc;
+  background-color: var(--color-sheet100);
 }
 
 .imageGallery {
@@ -120,32 +120,32 @@
 
       span {
         display: block;
-        box-shadow: 0 0 0 4px #FFF, 0 0 0 6px $neutral200;
+        box-shadow: 0 0 0 4px var(--color-sheet), 0 0 0 6px var(--color-border);
         border-radius: 50%;
-        background: $neutral500;
+        background: var(--color-primary);
         width: 12px;
         height: 12px;
         flex-shrink: 0;
         flex-grow: 0;
         position: relative;
-        box-shadow: 0 0 0 4px #FFF, 0 0 0 6px $neutral200;
+        box-shadow: 0 0 0 4px var(--color-sheet), 0 0 0 6px var(--color-border);
         z-index: 2;
         transition: all 600ms ease-in-out;
       }
 
       &.active {
         span {
-          // background: $primary;
-          // box-shadow: 0 0 0 4px #FFF, 0 0 0 6px $primary;
+          // background: var(--color-primary);
+          // box-shadow: 0 0 0 4px #FFF, 0 0 0 6px var(--color-primary);
         }
 
         &:before {
-          // border-color: $primary;
+          // border-color: var(--color-primary);
           transform: translateX(16px);
         }
 
         &:after {
-          // border-color: $primary;
+          // border-color: var(--color-primary);
         }
       }
 
@@ -155,7 +155,7 @@
         top: 6px;
         height: 1px;
         width: 16px;
-        // border-top: 2px dashed $neutral200;
+        // border-top: 2px dashed var(--color-neutral200);
         border-radius: 2px;
         transform: translateX(0);
         transition: all 600ms cubic-bezier(.75,-0.5,0,1.75);
@@ -166,7 +166,7 @@
         display: block;
         position: absolute;
         left: 5px;
-        border-left: 2px dashed $neutral200;
+        border-left: 2px dashed var(--color-border);
         top: 16px;
         bottom: 16px;
         transition: all 600ms ease-in-out;
@@ -194,7 +194,7 @@
 
         span {
           box-shadow: none;
-          background-color: $tertiary;
+          background-color: var(--color-tertiary);
         }
         &:before {
           display: none;
@@ -212,7 +212,7 @@
       margin-top: 10px;
       flex-shrink: 0;
       border-radius: 50%;
-      background: $tertiary;
+      background: var(--color-tertiary);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -235,7 +235,7 @@
   }
 
   video {
-    box-shadow: 0 8px 16px -4px rgba(#000, 0.2), 0 0 0 8px $neutral200;
+    box-shadow: 0 8px 16px -4px rgba(#000, 0.2), 0 0 0 8px var(--color-neutral200);
     cursor: pointer;
   }
 }
@@ -254,7 +254,7 @@
 
 .scrollLink {
   text-decoration: none;
-  color: $primary;
+  color: var(--color-primary);
   padding: 8px 0;
   position: relative;
   display: inline-flex;
@@ -272,7 +272,7 @@
     bottom: 0;
     height: 2px;
     border-radius: 2px;
-    background: $primary;
+    background: var(--color-primary);
     left: -48px;
     width: 100%;
     transform: translateX(-100%);

@@ -1,7 +1,7 @@
 @import '../../styles/foundations.module.scss';
 
 @keyframes pulse {
-  0% { transform: scale(1) }
+  0% { transform: scale(1); opacity: 0.4 }
   100% { transform: scale(6); opacity: 0; }
 }
 
@@ -18,37 +18,12 @@
   cursor: pointer;
 
   .core {
-    background: neutral200;
+    background: var(--color-tertiary);
     position: relative;
     border-radius: 50%;
     width: 12px;
     height: 12px;
-    z-index: 9;;
-  }
-}
-
-.pulse {
-  .core {
-    background: $tertiary;
-  }
-  &:after,
-  &:before {
-    content: "";
-    position: absolute;
-    background-color: rgba($primary, 0.4);
-    border-radius: 50%;
-    width: 16px;
-    height: 16px;
-    z-index: 6;
-
-    animation-name: pulse;
-    animation-duration: 2000ms;
-    animation-iteration-count: infinite;
-    animation-timing-function: cubic-bezier(-0.5,1,0.5,1.75);
-  }
-
-  &:after {
-    animation-delay: 400ms;
+    z-index: 9;
   }
 }
 
@@ -60,7 +35,7 @@
   pointer-events: none;
 }
 .message {
-  background: $primary;
+  background: var(--color-primary);
   padding: 24px;
   border-radius: 16px;
   width: 300px;
@@ -144,7 +119,7 @@
     align-items: center;
     flex-direction: column;
     font-weight: 900;
-    color: #1f3033;
+    color: var(--color-body);
     overflow: hidden;
     position: relative;
     line-height: 1;
@@ -180,8 +155,8 @@
       left: 0;
       top: -10%;
       bottom: 0;;
-      background: rgba(#091F26, 0.05);
-      box-shadow: 2px 0 24px rgba(#091F26, 0.05);
+      background: var(--shadow-gravityLetter);
+      box-shadow: 2px 0 24px var(--shadow-gravityLetter);
     }
   }
 

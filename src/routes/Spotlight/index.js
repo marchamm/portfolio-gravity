@@ -2,6 +2,7 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 import cnames from 'classnames';
 import Footer from '../../components/Footer';
+import SVG from '../../components/SVG';
 import PageContainer from '../../components/PageContainer';
 import SpotlightCard from '../../components/SpotlightCard';
 import BackButton from '../../components/BackButton';
@@ -9,10 +10,10 @@ import DesignSystem from './DesignSystem';
 import ProductPage from './ProductPage';
 import styles from'./Spotlight.module.scss';
 
-import productPageImage from '../../images/illustration-productpage.jpg';
-import designSystemImage from '../../images/illustration-bird.jpg';
-import prototypingImage from '../../images/illustration-config.jpg';
-import burstAnimation from '../../images/illustration-burst.jpg';
+import productPageImage from '../../images/illustration-productpage.png';
+import designSystemImage from '../../images/illustration-bird.png';
+import prototypingImage from '../../images/illustration-config.png';
+import burstAnimation from '../../images/illustration-burst.png';
 
 const spotlightImages = {
   productPage: productPageImage,
@@ -27,6 +28,12 @@ const Spotlight = ({ match }) => {
       <div className={cnames(styles.wrapper)}>
         <BackButton />
         <div className={styles.caseContainer}>
+          <div className={styles.topIllustration}>
+            <SVG src="wave" />
+          </div>
+          <div className={styles.bottomIllustration}>
+            <SVG src="waveInverted" />
+          </div>
           <Route exact path="/spotlight/product-page" component={ProductPage} key="productPage" />
           <Route exact path="/spotlight/design-system" component={DesignSystem} key="designSystem" />
         </div>

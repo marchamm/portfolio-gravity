@@ -4,7 +4,7 @@ p {
 }
 
 .textLink {
-  color: $primary;
+  color: var(--color-primary);
   text-decoration: none;
   display: inline-block;
   position: relative;
@@ -13,7 +13,7 @@ p {
     content: "";
     display: block;
     position: absolute;
-    background: $neutral200;
+    background: var(--color-neutral200);
     height: 3px;
     bottom: 0;
     width: 100%;
@@ -23,7 +23,7 @@ p {
 
   &:hover {
     &::after {
-      background: $primary;
+      background: var(--color-primary);
     }
   }
 }
@@ -38,7 +38,7 @@ strong {
 }
 
 .muted {
-  color: $neutral500;
+  color: var(--color-neutral500);
 }
 
 .displayOne,

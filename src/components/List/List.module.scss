@@ -27,7 +27,7 @@
   width: 20px;
   top: 12px;
   left: -40px;
-  color: $neutral300;
+  color: var(--color-neutral300);
 
   svg {
     width: 100%;
@@ -48,14 +48,14 @@
     width: 0;
     left: 0;
     transform: translateX(-1px);
-    border-right: 2px dashed #e4e7ec;
+    border-right: 2px dashed var(--color-border);
     border-radius: 2px;
   }
 
   &:after {
     content: "";
     display: block;
-    background: $primary;
+    background: var(--color-primary);
     width: 12px;
     height: 12px;
     border-radius: 50%;

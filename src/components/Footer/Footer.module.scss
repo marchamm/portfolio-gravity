@@ -7,11 +7,7 @@
   flex-wrap: wrap;
   padding-top: 20%;
   padding-bottom: 50%;
-  background: #FFF;
-  background-image: url('../../images/footerIllo-02.svg'), url('../../images/wave.svg');
-  background-position: bottom, top;
-  background-size: 100%;
-  background-repeat: no-repeat;
+  background: var(--color-sheet);
   z-index: 2;
 }
 

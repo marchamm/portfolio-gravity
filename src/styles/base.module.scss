@@ -1,7 +1,7 @@
 @import './colors.module.scss';
 
 ::selection {
-  background: $highlight;
+  background: var(--color-highlight);
 }
 
 * {
@@ -11,11 +11,11 @@
 button {
   appearance: none;
   border: none;
-  background: $neutral100;
+  background: var(--color-neutral100);
 
   &:focus {
     outline: none;
-    box-shadow: 0 0 0 4px rgba($primary, 0.5);
+    box-shadow: 0 0 0 4px rgba(var(--color-primary), 0.5);
   }
 }
 
@@ -23,7 +23,7 @@ video {
 
   &:focus {
     outline: none;
-    box-shadow: 0 0 0 4px rgba($primary, 0.5);
+    box-shadow: 0 0 0 4px rgba(var(--color-primary), 0.5);
   }
 }
 
@@ -35,8 +35,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: $body;
-  background-color: #f5f6fb;
+  color: var(--color-body);
+  background-color: var(--color-sheet100);
 }
 
 code {
@@ -46,7 +46,21 @@ code {
 
 .wrapper {
   width: 100%;
-  max-width: 1600px;
+  max-width: 1680px;
   margin: auto;
   overflow: hidden;
+}
+
+.bottomIllustration {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.topIllustration {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
 }

@@ -5,7 +5,6 @@ import posed, { PoseGroup } from 'react-pose';
 import ScrollToTop from './components/ScrollToTop/';
 import GoogleAnalytics from './components/GoogleAnalytics/';
 import Home from './routes/Home/';
-import Test from './routes/Test/';
 import Spotlight from './routes/Spotlight/';
 import './styles/foundations.module.scss'
 
@@ -42,7 +41,6 @@ class App extends Component {
                   >
                     <Switch location={location}>
                       <Route exact path="/" component={Home} key="Home" />
-                      <Route exact path="/test" component={Test} key="Test" />
                       <Route path="/spotlight" component={Spotlight} key="Spotlight" />
                     </Switch>
                   </RouteContainer>

@@ -23,3 +23,11 @@
 .spotlightContainer {
   background: var(--color-sheet100);
 }
+
+.toggleContainer {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 5%;
+  z-index: 9999999;
+}

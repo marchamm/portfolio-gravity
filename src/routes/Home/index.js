@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import cnames from 'classnames';
-import { Link, Element } from 'react-scroll';
+import { Element } from 'react-scroll';
 import Footer from '../../components/Footer';
 import SVG from '../../components/SVG';
 import List, { ListItem } from '../../components/List';
 import PageContainer from '../../components/PageContainer';
 import GravityHero from '../../components/GravityHero';
+import Burst from '../../components/Burst';
+// import SiteSettings from '../../components/SiteSettings';
 import SpotlightCard from '../../components/SpotlightCard';
 import styles from './Home.module.scss';
 import '../../styles/utils.module.scss';
@@ -26,10 +28,12 @@ class Home extends Component {
   componentDidMount() {
     setTimeout(() => { window.scrollTo(0, 0) }, 400);
   }
+
   render() {
     return (
       <div>
         <div className={styles.wrapper}>
+          <Burst />
           <GravityHero />
           <div className={styles.main}>
             <div className={styles.infoContainer}>

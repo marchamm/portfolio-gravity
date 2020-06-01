@@ -1987,7 +1987,7 @@ class-utils@^0.3.5:
     isobject "^3.0.0"
     static-extend "^0.1.1"
 
-classnames@^2.2.6:
+classnames@^2.2.5, classnames@^2.2.6:
   version "2.2.6"
   resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.6.tgz#43935bffdd291f326dad0a205309b38d00f650ce"
 
@@ -5283,6 +5283,11 @@ loader-utils@^1.0.1, loader-utils@^1.0.2, loader-utils@^1.1.0:
     emojis-list "^2.0.0"
     json5 "^1.0.1"
 
+local-storage@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/local-storage/-/local-storage-2.0.0.tgz#748b7d041b197f46f3ec7393640851c175b64db8"
+  integrity sha512-/0sRoeijw7yr/igbVVygDuq6dlYCmtsuTmmpnweVlVtl/s10pf5BCq8LWBxW/AMyFJ3MhMUuggMZiYlx6qr9tw==
+
 locate-path@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/locate-path/-/locate-path-2.0.0.tgz#2b568b265eec944c6d9c0de9c3dbbbca0354cd8e"
@@ -7400,6 +7405,13 @@ react-side-effect@^1.1.0:
   integrity sha512-v1ht1aHg5k/thv56DRcjw+WtojuuDHFUgGfc+bFHOWsF4ZK6C2V57DO0Or0GPsg6+LSTE0M6Ry/gfzhzSwbc5w==
   dependencies:
     shallowequal "^1.0.1"
+
+react-toggle@^4.1.1:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/react-toggle/-/react-toggle-4.1.1.tgz#2317f67bf918ea3508a96b09dd383efd9da572af"
+  integrity sha512-+wXlMcSpg8SmnIXauMaZiKpR+r2wp2gMUteroejp2UTSqGTVvZLN+m9EhMzFARBKEw7KpQOwzCyfzeHeAndQGw==
+  dependencies:
+    classnames "^2.2.5"
 
 react@^16.7.0:
   version "16.7.0"

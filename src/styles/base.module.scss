@@ -26,7 +26,6 @@ video {
     box-shadow: 0 0 0 4px rgba(var(--color-primary), 0.5);
   }
 }
-
 body {
   margin: 0;
   padding: 0;
@@ -35,6 +34,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+.core {
   color: var(--color-body);
   background-color: var(--color-sheet100);
 }
@@ -63,4 +64,106 @@ code {
   top: 0;
   left: 0;
   right: 0;
+}
+
+.toggle {
+  display: flex;
+  align-items: center;
+  user-select: none;
+
+  .label {
+    margin:  0 8px;
+  }
+
+  .hiddenLabel {
+    position: absolute;
+    pointer-events: none;
+    opacity: 0;
+  }
+
+  :global {
+    .react-toggle {
+      touch-action: pan-x;
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+      background-color: transparent;
+      border: 0;
+      padding: 0;
+      background: var(--color-sheet300);
+      // border: 2px solid var(--color-sheet300);
+      border-radius: 200vh;
+      height: 40px;
+      width: 80px;
+
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+
+      -webkit-tap-highlight-color: rgba(0,0,0,0);
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .react-toggle-track {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 4px 10px;
+      height: 40px;
+      width: 80px;
+      position: absolute;
+      z-index: 2;
+      -webkit-transition: all 0.2s ease;
+      -moz-transition: all 0.2s ease;
+      transition: all 0.2s ease;
+      & > div {
+        display: flex;
+        align-items: center;
+      }
+      svg {
+        width: 20px;
+      }
+    }
+    .react-toggle-thumb {
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      transition: transform 300ms cubic-bezier(.25,-0.5,0,1.25);
+
+      background: var(--color-sheet);
+      width: 36px;
+      height: 36px;
+      border-radius: 36px;
+      box-shadow: 0 4px 16px -8px rgba(0,0,0,0.8);
+    }
+
+    .react-toggle--checked .react-toggle-thumb {
+      transform: translateX(40px);
+    }
+    .react-toggle-track-check {
+      color: var(--color-primary);
+    }
+    .react-toggle--checked .react-toggle-track-check {
+      color: var(--color-neutral500);
+    }
+    .react-toggle-track-x {
+      color: var(--color-neutral300);
+    }
+    .react-toggle--checked .react-toggle-track-x {
+      color: var(--color-primary);
+    }
+    .react-toggle-screenreader-only {
+      border: 0;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px;
+    }
+  }
 }

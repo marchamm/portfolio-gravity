@@ -3,7 +3,7 @@ import cnames from 'classnames';
 import styles from './Burst.module.scss';
 
 var burstConfig = {
-  clones: 24,            // number of clones
+  clones: 16,            // number of clones
   randomClones: true,   // number of clones will differ by 0-50% for each burst
   spread: 0.5,            // spread of clones
   rotate: 480,          // rotation of clones starting from 0
@@ -11,7 +11,7 @@ var burstConfig = {
   opacity: 1,           // end opacity of clone
   origin: 'top',    // burst starting point
   element: null,        // element to use as clone
-  rate: 120,             // time between clones
+  rate: 80,             // time between clones
   scale: 1,             // final clone size starting from 1
   randomScale: true,    // final clone size will differ by 0-50% for each clone
   time: 6000,              // time of animation for each clone
@@ -34,20 +34,29 @@ const Beacon = (props) => {
   )
 }
 
+const element =
+    <svg viewBox="0 0 20 18.35" width="28" fill="currentColor" className={styles.heart}>
+      <path d="M10 18.35L8.55 17C3.4 12.36 0 9.28 0 5.5A5.45 5.45 0 0 1 5.5 0 6 6 0 0 1 10 2.09 6 6 0 0 1 14.5 0 5.45 5.45 0 0 1 20 5.5c0 3.78-3.4 6.86-8.55 11.54z" />
+    </svg>
+
 class Burst extends Component {
   constructor (props) {
     super()
-    this.burstItems = Array(props.clones).fill(props.children);
+    this.burstItems = Array(burstConfig.clones).fill(element);
     this.burstItemsClone = []
-    this.burst = this.burst.bind(this);
     this.trigger = this.trigger.bind(this);
     this.state = {
       beacon: true
     }
   }
 
-  trigger() {
-    const items = this.burstItemsClone
+  componentDidMount() {
+    this.setState({
+      burstItemsClone: [],
+    })
+  }
+
+  trigger(items) {
     for (let i = items.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [items[i], items[j]] = [items[j], items[i]];
@@ -61,10 +70,11 @@ class Burst extends Component {
   }
 
   burst(item, index) {
+    if (!item) return null
     const el = item
     var spread
     var scale
-    var origin = this.props.position
+    var origin = burstConfig.position
     var angle
     var transformOrigin
     var rotate = burstConfig.rotate
@@ -100,11 +110,12 @@ class Burst extends Component {
   render() {
 
     const {
-      trigger,
       position,
     } = this.props
 
     const items = this.burstItems
+
+    const burstClones = []
 
     const classNames = cnames(styles.burstInner, {
       [styles.top]: position === 'top',
@@ -113,14 +124,20 @@ class Burst extends Component {
 
     return (
       <React.Fragment>
-        <Beacon pulse={this.state.beacon} />
-        { this.state.beacon && React.cloneElement(trigger({ onClick: this.trigger })) }
+        {this.state.beacon &&
+          <>
+            <Beacon pulse={this.state.beacon} />
+            <button onClick={() => this.trigger(burstClones)} aria-label="burst animation" className={styles.beacon}>
+              <div className={styles.core} />
+            </button>
+          </>
+        }
         <div className={styles.burstOuter}>
           <div className={classNames}>
             { items.map((item, i) => (
               <div
                 className={styles.burstItem}
-                ref={n => this.burstItemsClone.push(n)}
+                ref={n => burstClones.push(n)}
                 key={item+i}
               >
                 { item }

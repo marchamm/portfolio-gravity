@@ -24,6 +24,10 @@
     min-width: 40%;
     margin: 32px;
   }
+
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--color-sheet200);
+  }
 }
 
 .body {

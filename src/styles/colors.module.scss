@@ -16,11 +16,12 @@
   --color-sheet200: #f3f5f9;
   --color-sheet300: #e4e7ec;
   --shadow-gravityLetter: rgba(9, 31, 38, 0.05);
+  --color-fab: #ffffff;
 }
 @media (prefers-color-scheme: dark) {
   :root {
     --color-tertiary: #e03f7f;
-    --color-primary: #3073DF;
+    --color-primary: #578EE5;
     --color-neutral50: #f5f6fb;
     --color-neutral100: #f3f5f9;
     --color-neutral200: #e4e7ec;
@@ -33,8 +34,9 @@
     --color-border: rgba(57, 69, 95, 1);
     --color-sheet: #111617;
     --color-sheet100: #20292b;
-    --color-sheet200: #20292b;
+    --color-sheet200: #2f3b3e;
     --color-sheet300: #344144;
+    --color-fab: #e8e8e2;
     --shadow-gravityLetter: rgba(0, 0, 0, 0.3);
   }
 }

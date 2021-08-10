@@ -10,10 +10,10 @@ import DesignSystem from './DesignSystem';
 import ProductPage from './ProductPage';
 import styles from'./Spotlight.module.scss';
 
-import productPageImage from '../../images/illustration-productpage.png';
-import designSystemImage from '../../images/illustration-bird.png';
-import prototypingImage from '../../images/illustration-config.png';
-import burstAnimation from '../../images/illustration-burst.png';
+import productPageImage from '../../images/illustration-productpage.webp';
+import designSystemImage from '../../images/illustration-bird.webp';
+import prototypingImage from '../../images/illustration-config.webp';
+import burstAnimation from '../../images/illustration-burst.webp';
 
 const spotlightImages = {
   productPage: productPageImage,
